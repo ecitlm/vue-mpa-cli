@@ -31,13 +31,13 @@
               <div class="m_article_desc ">
                 <div class="m_article_desc_l">
                   <span class="m_article_channel">{{item.source}}</span>
-                  <!--<span class="m_article_time"></span>-->
+                  <span class="m_article_time">  {{item.ptime}}</span>
                 </div>
-                <div class="m_article_desc_r">
+                <!--<div class="m_article_desc_r">
                   <div class="">
                     {{item.ptime}}
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
           </a>
