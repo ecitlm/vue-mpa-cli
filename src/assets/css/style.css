@@ -1,0 +1,90 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+}
+
+.clearfix {
+  clear: both
+}
+
+#content-list section {
+  background: #f6f6f6;
+  width: 100%;
+  height: auto;
+}
+
+.m_article {
+  padding: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.m_article .m_article_img {
+  float: left;
+  width: 27%;
+
+  overflow: hidden;
+  position: relative;
+  margin-right: 8px;
+}
+
+.m_article_img img {
+  width: 100%;
+}
+
+.m_article .m_article_info {
+  overflow: hidden;
+  padding-bottom: 4px;
+  height: ;
+}
+
+.m_article .m_article_info .m_article_title {
+  font-size: 16px;
+  margin-bottom: .2rem;
+  color: #404040;
+  line-height: 24px;
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-line-break: auto;
+  -webkit-box-orient: vertical
+}
+
+.m_article .m_article_desc .m_article_channel {
+  display: inline-block;
+  color: #f33;
+  font-size: 12px;
+  padding: 2px;
+  line-height: 12px;
+  margin-right: .1rem;
+  background: url(http://img2.cache.netease.com/f2e/wap/common/images/border_red.png) no-repeat;
+  background-size: 100% 100%
+}
+
+.m_article .m_article_desc .m_article_time {
+  color: #888;
+  display: inline-block
+}
+
+.m_article .m_article_desc .m_article_desc_l {
+  float: left
+}
+
+.m_article .m_article_desc .m_article_desc_r {
+  float: right;
+  background-size: contain;
+  background-position: left 0;
+  background-repeat: no-repeat;
+  color: #888;
+}
