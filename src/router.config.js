@@ -5,6 +5,7 @@
 
 import Home from './components/Home.vue'
 import Video  from './components/Video.vue'
+import Article  from './components/Article.vue'
 
 
 
@@ -13,7 +14,7 @@ export default{
     routes: [
         {path: '/home', component: Home},
         {path: '/video', component: Video},
-
-        {path: '*', redirect: '/video'}
+        {path: '/article', component: Article},
+        {path: '*', redirect: '/home'}
     ]
 }

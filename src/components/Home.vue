@@ -1,13 +1,9 @@
 <template>
     <div class="home">
-      <div id="header">
-        <mt-header title="网易新闻" style="background: #C62F2F">
-          <router-link to="/" slot="left">
-            <mt-button icon="back"></mt-button>
-          </router-link>
-          <mt-button icon="more" slot="right" ></mt-button>
-        </mt-header>
-      </div>
+
+
+
+
 
       <div id="swiper">
         <mt-swipe :auto="4000">
@@ -18,9 +14,11 @@
       </div>
 
 
+
+
       <div id="content-list">
-        <section class="m_article clearfix" v-for="item in list">
-          <a href="#" :id="item.postid">
+        <router-link tag="section" class="m_article clearfix" :to="{ path: 'article', query: { id: item.postid}}" v-for="item in list">
+            <a :href="{ path: 'article', query: { id: item.postid }}">
             <div class="m_article_img">
               <img :src="item.imgsrc">
             </div>
@@ -41,21 +39,34 @@
               </div>
             </div>
           </a>
-        </section>
+        </router-link>
 
       </div>
-
-    </div>
 </template>
 <style>
-  #header{
-    margin:0;
-    padding:0;
-  }
+
   #swiper{
     width:100%;
     height:200px;
+    float: left;
   }
+  #title-list{
+     width:100%;}
+  #title-list li{
+    float: left;
+    display: inline-block;
+    text-align: center;
+    width:20%;
+    padding:10px 0;
+  }
+  .mint-popup{
+    width:100%;}
+  .v-modal{
+    background:rgba(255,255,255,0.8) !important;}
+  .mint-popup-top{
+    top:40px ;}
+  .mint-popup{
+    background: rgba(255,255,255,0.8) !important;}
 
 </style>
 <script>
@@ -65,6 +76,7 @@
         data(){
             return{
                 msg:'hello Home',
+                popupVisible:true,
                 list:{}
             }
         },
