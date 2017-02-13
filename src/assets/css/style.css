@@ -88,8 +88,22 @@ body, html {
 .m_article .m_article_desc .m_article_desc_r {
   float: right;
   background-size: contain;
-  background-position: left 0;
-  background-repeat: no-repeat;
+
   color: #888;
   font-size:12px;
 }
+
+
+.video-play,.video{
+  width:100%;
+  float: left;
+  height:auto;
+  overflow: hidden;
+}
+.video-play h3{
+  text-align:center;
+  line-height:24px;
+  font-size:16px;}
+
+.video-play video{
+  width:100%;}
