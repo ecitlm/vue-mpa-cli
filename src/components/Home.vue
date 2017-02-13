@@ -1,21 +1,10 @@
 <template>
     <div class="home">
-
-
-
-
-
-      <div id="swiper">
-        <mt-swipe :auto="4000">
-          <mt-swipe-item style="background: #15d">1222222222222222222</mt-swipe-item>
-          <mt-swipe-item style="background-color: red;">2</mt-swipe-item>
-          <mt-swipe-item style="background-color: #351;">3</mt-swipe-item>
+      <div id="swiper" >
+        <mt-swipe :auto="4000" >
+          <mt-swipe-item  v-for="item in bannerList"><img :src="item.imgsrc" alt=""></mt-swipe-item>
         </mt-swipe>
       </div>
-
-
-
-
       <div id="content-list">
         <router-link tag="section" class="m_article clearfix" :to="{ path: 'article', query: { id: item.postid}}" v-for="item in list">
             <a :href="{ path: 'article', query: { id: item.postid }}">
@@ -47,9 +36,13 @@
 
   #swiper{
     width:100%;
+    max-height:500px;
+    height:auto;
     height:200px;
     float: left;
   }
+  #swiper img{
+    width:100%;}
   #title-list{
      width:100%;}
   #title-list li{
@@ -77,22 +70,33 @@
             return{
                 msg:'hello Home',
                 popupVisible:true,
-                list:{}
+                list:{},
+                bannerList:{}
             }
         },
       created(){
             this.get();
+            this.getBanner();
+
       },
 
       methods:{
         get:function(){
           axios.get('/api/article/headline/T1348648037603/10-10.html').then(function(res){
-            console.log(res.data.T1348648037603)
             this.list=res.data.T1348648037603;
+          }.bind(this)).catch(function(error){
+            console.log(error)
+          })
+        },
+        getBanner:function () {
+          axios.get('/api/article/headline/list/0-20.html?from=toutiao&passport=&devId').then(function(res){
+            console.log(res.data.list[0].ads);
+            this.bannerList=res.data.list[0].ads;
 
           }.bind(this)).catch(function(error){
             console.log(error)
           })
+
         }
       }
     }

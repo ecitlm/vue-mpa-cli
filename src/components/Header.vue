@@ -2,7 +2,7 @@
 
     <div class="headerbar">
         <div id="header">
-            <mt-header title="新闻163" style="background: #C62F2F">
+            <mt-header title="新闻163" style="background: #f33">
                 <router-link to="/" slot="left">
                     <mt-button icon="back"></mt-button>
                 </router-link>
@@ -22,6 +22,10 @@
                 <li>
                     <router-link to="/video" slot="">视频</router-link>
                 </li>
+
+              <li>
+                <router-link to="/" slot="">NBA</router-link>
+              </li>
                 <!--<li>社会</li>
                 <li>国际</li>
                 <li>娱乐</li>
@@ -58,7 +62,7 @@
         data(){
             return {
                 msg: 'hello vue',
-                popupVisible: false,
+                popupVisible: false
             }
         },
         watch: {
