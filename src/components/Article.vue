@@ -10,7 +10,7 @@
 </style>
 <script>
   import axios from 'axios'
-  import { Indicator } from 'mint-ui';
+  import { Indicator } from 'mint-ui'
   export default{
     data(){
       return {

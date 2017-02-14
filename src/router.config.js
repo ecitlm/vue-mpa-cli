@@ -6,6 +6,7 @@
 import Home from './components/Home.vue'
 import Video  from './components/Video.vue'
 import Article  from './components/Article.vue'
+import videoplayer  from './components/VideoPlayer.vue'
 
 
 
@@ -15,6 +16,7 @@ export default{
         {path: '/home', component: Home},
         {path: '/video', component: Video},
         {path: '/article', component: Article},
+        {path: '/player', component: videoplayer},
         {path: '*', redirect: '/home'}
     ]
 }

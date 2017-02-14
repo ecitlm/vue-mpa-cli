@@ -66,7 +66,6 @@
         position: relative;
         height: 40px;
     }
-
     #header {
         margin: 0;
         padding: 0;
@@ -75,8 +74,12 @@
         width: 100%;
         z-index: 2;
         clear: both;
-
     }
+  #title-list li a{
+    color: #666;
+  }
+ /* #title-list li a.router-link-active{
+    color: #666;}*/
 </style>
 <script>
 
