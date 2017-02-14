@@ -102,7 +102,8 @@ body, html {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding:10px;
+  padding:15px;
+  background: #f6f6f6;
 }
 .video-item{
   position: relative;
