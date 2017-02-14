@@ -19,18 +19,38 @@
                 <li>
                     <router-link to="/home" slot="">新闻</router-link>
                 </li>
-                <li>
-                    <router-link to="/video" slot="">视频</router-link>
+                <li data="T1348648517839">
+                    <router-link to="/" slot="">娱乐</router-link>
                 </li>
 
-              <li>
-                <router-link to="/" slot="">NBA</router-link>
-              </li>
-                <!--<li>社会</li>
-                <li>国际</li>
-                <li>娱乐</li>
-                <li>热点</li>
-                <li>教育</li>-->
+                <li data="T1348648141035">
+                    <router-link to="/" slot="">军事</router-link>
+                </li>
+
+                <li data="T1348654225495">
+                    <router-link to="/" slot="">教育</router-link>
+                </li>
+                <li>
+                <router-link to="/video" slot="">视频</router-link>
+                </li>
+
+                <li data="T1348649145984">
+                    <router-link to="/" slot="">NBA</router-link>
+                </li>
+
+                <li data="">
+                    <router-link to="/" slot="">音乐</router-link>
+                </li>
+                <li  >军事</li>
+                <li  >视频</li>
+                <li  >段子</li>
+                <li  >科技</li>
+                <li  >跟贴</li>
+                <li  >教育</li>
+                <li  >健康</li>
+                <li  >亲子</li>
+                <li  >彩票</li>
+
 
             </ul>
 
@@ -40,11 +60,13 @@
 
 </template>
 <style>
-    .headerbar{
-        width:100%;
-        width:100%;
+    .headerbar {
+        width: 100%;
+        width: 100%;
         position: relative;
-        height:40px;}
+        height: 40px;
+    }
+
     #header {
         margin: 0;
         padding: 0;
@@ -62,7 +84,8 @@
         data(){
             return {
                 msg: 'hello vue',
-                popupVisible: false
+                popupVisible: false,
+                titleType:type
             }
         },
         watch: {

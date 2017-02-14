@@ -1,15 +1,12 @@
 <template>
     <div class="video">
-        
+
         <div class="video-play" v-for="item in list ">
-
             <video :src="item.mp4_url" controls="controls" :poster="item.cover">
-
             </video>
             <h3>{{item.title}}</h3>
         </div>
-        
-       
+
     </div>
 </template>
 <style>
@@ -33,7 +30,7 @@
 
         methods:{
             get:function(){
-                axios.get('/api/video/home/10-10.html').then(function(res){
+                axios.get(apiProxy+'/video/home/10-10.html').then(function(res){
                     console.log(res.data.videoList)
                     this.list=res.data.videoList;
 

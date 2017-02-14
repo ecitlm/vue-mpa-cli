@@ -7,16 +7,20 @@ import './assets/css/style.css'
 
 
 
+
+import apiConfig from './api/config.js'
 import VueRouter from 'vue-router'
 import routerConfig from './router.config.js'
 Vue.use(VueRouter);
 const router=new VueRouter(routerConfig);
 
 import Mint from 'mint-ui';
+
 Vue.use(Mint);
 
 new Vue({
     router,
+    apiConfig,
     el: '#app',
     template: '<App/>',
     components: { App }

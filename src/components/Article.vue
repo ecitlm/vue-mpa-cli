@@ -10,6 +10,7 @@
 </style>
 <script>
   import axios from 'axios'
+  import { Indicator } from 'mint-ui';
   export default{
     data(){
       return {
@@ -20,12 +21,22 @@
     created(){
       this.getArticle();
     },
+      activated(){
+          this.article={};
+          this.getArticle();
+          Indicator.open({
+              text: '加载中...',
+              spinnerType: 'fading-circle'
+          });
+          //alert(1)
+      },
     methods: {
       getArticle: function () {
         var id = String(this.$route.query.id);
-        axios.get('/api/article/'+id+'/full.html').then(function (res) {
-          console.log(res.data);
-          this.article = res.data[id];
+        axios.get(apiProxy+'article/'+id+'/full.html').then(function (res) {
+            Indicator.close();
+            console.log(res.data);
+            (typeof res.data[id] == "object") ? this.article=res.data[id] : this.article={"body":"该内容已删除"};
 
         }.bind(this)).catch(function (error) {
           console.log(error)

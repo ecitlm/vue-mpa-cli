@@ -82,14 +82,15 @@
 
       methods:{
         get:function(){
-          axios.get('/api/article/headline/T1348648037603/10-10.html').then(function(res){
+
+          axios.get(apiProxy+'/article/headline/T1348648037603/10-10.html').then(function(res){
             this.list=res.data.T1348648037603;
           }.bind(this)).catch(function(error){
             console.log(error)
           })
         },
         getBanner:function () {
-          axios.get('/api/article/headline/list/0-20.html?from=toutiao&passport=&devId').then(function(res){
+          axios.get(apiProxy+'/article/headline/list/0-20.html?from=toutiao&passport=&devId').then(function(res){
             console.log(res.data.list[0].ads);
             this.bannerList=res.data.list[0].ads;
 
