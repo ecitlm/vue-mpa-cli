@@ -6,18 +6,20 @@
   </div>
 </template>
 <style>
-#audio-play{
-  position: fixed;
-  width:100%;
-  bottom:5px;
-  left:0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  box-shadow: 3px 3px 8px #ddd;
-}
-#audio-play .aplayer{
-    margin:0;}
+  #audio-play {
+    position: fixed;
+    width: 100%;
+    bottom: 5px;
+    left: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-shadow: 3px 3px 8px #ddd;
+  }
+
+  #audio-play .aplayer {
+    margin: 0;
+  }
 
 </style>
 <script>
@@ -28,8 +30,8 @@
   export default{
     data(){
       return {
-        list:{},
-        info:{},
+        list: {},
+        info: {},
         songs: [
           {
             title: '你好世界2',
@@ -53,19 +55,17 @@
       }
     },
     created(){
-        this.get();
+      this.get();
     },
-    methods:{
+    methods: {
       get: function () {
         axios.get(musicApi + '27713963&ids=[27713963]').then(function (res) {
           console.log(res.data);
           this.list = res.data.songs[0];
-          this.songs[0].title=this.list.name;
-          this.songs[0].author=this.list.name;
-          this.songs[0].url=this.list.mp3Url
-          this.songs[0].pic=this.list.album.picUrl;
-
-
+          this.songs[0].title = this.list.name;
+          this.songs[0].author = this.list.name;
+          this.songs[0].url = this.list.mp3Url
+          this.songs[0].pic = this.list.album.picUrl;
         }.bind(this)).catch(function (error) {
           console.log(error)
         })
@@ -74,7 +74,7 @@
 
     },
     mounted() {
-        alert(1)
+      alert(1)
     },
 
     components: {
