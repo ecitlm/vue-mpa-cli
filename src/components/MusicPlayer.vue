@@ -49,7 +49,6 @@
         handler: function (val, oldVal) {
           let aplayer = this.$refs.player.control;
           aplayer.pause();
-          console.log(aplayer.play())
         },
         deep: true
       }
@@ -74,7 +73,9 @@
 
     },
     mounted() {
-      alert(1)
+      this.get();
+      let aplayer = this.$refs.player.control;
+      aplayer.pause();
     },
 
     components: {
