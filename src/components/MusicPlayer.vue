@@ -1,7 +1,7 @@
 <template>
 
   <div id="audio-play">
-    {{songs[0].author}}
+    {{songs[0]}}
     <a-player :music="songs" ref="player"></a-player>
   </div>
 </template>
@@ -47,6 +47,7 @@
       // 深度 watcher
       songs: {
         handler: function (val, oldVal) {
+          alert(JSON.stringify(val));
           let aplayer = this.$refs.player.control;
           aplayer.pause();
         },
