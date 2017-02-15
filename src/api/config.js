@@ -5,6 +5,7 @@
 
 //接口代理API
 global.apiProxy = 'https://bird.ioliu.cn/v1?url=http://c.m.163.com/nc/';
+global.api="https://bird.ioliu.cn/v1?url=http://c.m.163.com/";
 type={
     news:"222",
     ent:"T1348648517839",

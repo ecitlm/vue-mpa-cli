@@ -8,6 +8,7 @@
     </div>-->
 
     <router-link tag="section" class="video-item" :to="{ path: '/player', query: { id: item.mp4_url}}" v-for="(item,index) in list">
+      <!--{{index}}-->
       <a :href="{ path: '/player', query: { id: item.mp4_url }}">
         <div class="v-poster">
           <img
