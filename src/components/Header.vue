@@ -25,9 +25,13 @@
                 <li data="">
                     <router-link to="/jokelist" slot="">段子</router-link>
                 </li>
-                <li data="T1348648517839">
-                    <router-link to="/" slot="">娱乐</router-link>
+                <li data="">
+                    <router-link to="/music" slot="">音乐</router-link>
                 </li>
+
+              <li data="T1348648517839">
+                <router-link to="/" slot="">娱乐</router-link>
+              </li>
 
                 <li data="T1348648141035">
                     <router-link to="/" slot="">军事</router-link>

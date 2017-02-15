@@ -2,7 +2,10 @@
     <div class="home">
       <div id="swiper" >
         <mt-swipe :auto="4000" >
-          <mt-swipe-item  v-for="item in bannerList"><img :src="item.imgsrc" alt=""></mt-swipe-item>
+          <mt-swipe-item  v-for="item in bannerList"><img :src="item.imgsrc" alt="">
+            <span class="swiper-title">{{item.title}}</span>
+
+          </mt-swipe-item>
         </mt-swipe>
       </div>
       <div id="content-list">
@@ -51,6 +54,12 @@
     text-align: center;
     width:20%;
     padding:10px 0;
+  }
+  .swiper-title{
+    position: absolute;
+    left:3%;
+    bottom:30px;
+    color: #eee;
   }
   .mint-popup{
     width:100%;}

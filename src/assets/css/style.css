@@ -47,7 +47,7 @@ body, html {
 .m_article .m_article_info {
   overflow: hidden;
   padding-bottom: 4px;
-  height: ;
+  height:;
 }
 
 .m_article .m_article_info .m_article_title {
@@ -77,13 +77,13 @@ body, html {
 .m_article .m_article_desc .m_article_time {
   color: #888;
   display: inline-block;
-  font-size:14px;
+  font-size: 14px;
   float: right;
 }
 
 .m_article .m_article_desc .m_article_desc_l {
   float: left;
-  width:100%;
+  width: 100%;
 }
 
 .m_article .m_article_desc .m_article_desc_r {
@@ -91,54 +91,61 @@ body, html {
   background-size: contain;
 
   color: #888;
-  font-size:12px;
+  font-size: 12px;
 }
 
-
-.video{
-  width:100%;
+.video {
+  width: 100%;
   float: left;
-  height:auto;
+  height: auto;
   overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding:15px;
+  padding: 15px;
   background: #f6f6f6;
 }
-.video-item{
+
+.video-item {
   position: relative;
   float: left;
-  margin-bottom:10px;
+  margin-bottom: 10px;
 }
-.v-poster{
-  width:100%;}
-.v-poster img{width: 100%;
+
+.v-poster {
+  width: 100%;
+}
+
+.v-poster img {
+  width: 100%;
   background-color: #e5e5e5;
   background: url(http://img2.cache.netease.com/f2e/wap/common/images/bg_img_sm.png) center center no-repeat;
   background-size: contain;
 }
-.v-mask{
+
+.v-mask {
   position: absolute;
   width: 100%;
-  min-height:100px;
+  min-height: 100px;
   bottom: 0;
   left: 0;
   z-index: 2;
-  height:auto;
+  height: auto;
   overflow: hidden;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding:10px;
+  padding: 10px;
 }
-.v-head{
-  width:100%;
+
+.v-head {
+  width: 100%;
   bottom: 10px;
   left: 0;
   line-height: 24px;
 }
-.v-play{
+
+.v-play {
   width: 40px;
   height: 23px;
   background: #f33;
@@ -150,12 +157,183 @@ body, html {
   background: url(http://img2.cache.netease.com/f2e/wap/touch_index_2016/trunk/images/play_btn.png) center center no-repeat;
   background-size: contain;
 }
- .v-title{
-   text-align: left;
-   position: absolute;
-   color: #fff;
-   height:auto;
-   overflow: hidden;
-   bottom:10px;
 
- }
+.v-title {
+  text-align: left;
+  position: absolute;
+  color: #fff;
+  height: auto;
+  overflow: hidden;
+  bottom: 10px;
+
+}
+
+/*music*/
+#music-head {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  overflow: hidden;
+  background: url("http://p3.music.126.net/Gxl0DxJg3ylaIKmaw8MLDQ==/18257390579244118.jpg");
+  box-sizing: border-box;
+  background-size: 100% auto;
+  padding: 15px 10px;
+  float: left;
+}
+
+.song-pic .tag {
+  position: absolute;
+  z-index: 3;
+  top: 10px;
+  left: 0px;
+  width: 34px;
+  height: 17px;
+  color: #fff;
+  font-size: 9px;
+  text-align: center;
+  line-height: 17px;
+  background-color: rgba(217, 48, 48, .8);
+  border-radius: 0 9999px 9999px 0;
+}
+
+.song-pic {
+  float: left;
+  width: 40%;
+  position: relative;
+  max-width: 200px;
+}
+
+.song-pic img {
+  width: 100%;
+}
+
+.song-pic .count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 5px;
+  height: 18px;
+  line-height: 18px;
+  color: #fff;
+  font-size: 12px;
+  text-align: right;
+  /* background-image: url('http://music.163.com/style/mobile/img/share/share_icn_headset@2x.png');
+   background-size: 13px auto;
+   background-position: 1px right;
+   background-repeat: no-repeat;*/
+}
+
+.cnt {
+  margin-left: 15px;
+  float: left;
+}
+
+.j-plname {
+  padding-top: 10px;
+  font-size: 17px;
+  line-height: 1.3;
+  color: #fefefe;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+}
+
+.cnt .art {
+  position: relative;
+  margin-top: 20px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.cnt .art .ava {
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.m-bill {
+  width: 100%;
+  float: left;
+}
+
+.u-hd {
+  height: 23px;
+  padding: 0 10px;
+  background: #ebebeb;
+  line-height: 23px;
+  font-size: 12px;
+  color: #666;
+  position: relative
+}
+.m-bill .list li{
+  height: 55px;
+  width:100%;
+  line-height: 1.4;
+  background-color: #f8f8f8;
+  position: relative;
+  float: left;
+
+}
+.m-bill .list a {
+  position: relative;
+  display: block;
+  height: 100%;
+}
+.m-bill .list li .num{
+  float: left;
+  width: 36px;
+  line-height: 55px;
+  text-align: center;
+  font-size: 17px;
+  color: #999;
+}
+.m-bill .list li .detail{
+  display: block;
+  height: 100%;
+  margin-left: 36px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+.m-bill .list li h3{
+  padding: 8px 40px 0 0;
+  font-size: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight:normal;
+}
+.s-fc1{
+  color: #333;}
+.m-bill li p{
+  padding-right: 40px;
+  font-size:12px;
+  color: #888;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.f-bd .play{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background-image: url('http://music.163.com/style/mobile/img/share/share_icon_play@2x.png');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}

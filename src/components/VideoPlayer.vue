@@ -26,8 +26,11 @@
       }
     },
     activated(){
+
       //console.log(JSON.stringify(this.videoOptions))
       this.videoOptions.source[0].src=this.$route.query.id;
+    },
+    created(){
 
     }
   }
