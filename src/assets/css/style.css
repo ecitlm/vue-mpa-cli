@@ -10,8 +10,15 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+  max-width:750px;margin: 0 auto;
+  position: relative;
+  min-height: 100%;
+  _height:100%;
 }
-
+#app{
+  position: relative;
+  width:100%;
+}
 .clearfix {
   clear: both
 }
@@ -47,7 +54,6 @@ body, html {
 .m_article .m_article_info {
   overflow: hidden;
   padding-bottom: 4px;
-  height:;
 }
 
 .m_article .m_article_info .m_article_title {
@@ -198,7 +204,7 @@ body, html {
 
 .song-pic {
   float: left;
-  width: 40%;
+  width: 35%;
   position: relative;
   max-width: 200px;
 }

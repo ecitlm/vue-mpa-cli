@@ -21,12 +21,11 @@
           poster: "http://www.freemake.com/blog/wp-content/uploads/2015/06/videojs-logo.jpg",
           defaultSrcReId: 2,
           height: 260,
-          autoplay: false
+          autoplay: true
         }
       }
     },
     activated(){
-
       //console.log(JSON.stringify(this.videoOptions))
       this.videoOptions.source[0].src=this.$route.query.id;
     },
