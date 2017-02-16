@@ -1,19 +1,26 @@
 <template>
   <div>
     <!--{{list.creator.avatarUrl}}-->
-    <div id="music-head">
+    <div id="music-head" >
+      <div class="head-bg" :style="{backgroundImage: 'url(' + list.coverImgUrl +'?param=252y252&quality=75'+ ')'}"></div>
+
+
       <div class="song-pic">
         <img :src="list.coverImgUrl+'?param=252y252&amp;quality=75'" >
         <span class="tag">歌单</span>
         <p class="count">{{list.trackCount}}</p>
       </div>
       <div class="cnt">
-        <h2 class="j-plname">{{list.name}}</h2>
+        <h2 class="j-plname"></h2>
         <div class="art s-fc3 f-thide">
-          <img src="http://p1.music.126.net/UUVBZwisn4EjaUsaeITqpw==/109951162823117909.jpg?param=60y60&amp;quality=75"   class="ava j-lazy z-loaded">ecitlm
+          {{list.name}}
+          <br>
+          <br>
+          <img src="http://p1.music.126.net/UUVBZwisn4EjaUsaeITqpw==/109951162823117909.jpg?param=60y60&amp;quality=75"   class="ava j-lazy z-loaded">
+          小明同学
+        </div>
+        </div>
 
-        </div>
-        </div>
       </div>
 
     <section class="m-intr">
@@ -32,7 +39,7 @@
               <span class="num s-fc4">{{index+1}}</span>
               <span class="detail">
                 <h3 class="s-fc1">{{item.name}}{{item.alias[0]}}</h3>
-                <p class="s-fc8">{{item.album.name}}</p>
+                <p class="s-fc8">{{item.artists[0].name}}-{{item.album.name}}</p>
             </span>
               <span href="#" class="play"></span>
             </a>
@@ -92,7 +99,7 @@
           text: '加载中...',
           spinnerType: 'fading-circle'
         });
-        axios.get(birdapi + '428460941').then(function (res) {
+        axios.get(birdapi + '428474016').then(function (res) {
           //console.log(JSON.stringify(res.data.data.result));
           this.list = res.data.data.result;
           Indicator.close();
