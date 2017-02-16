@@ -3,7 +3,7 @@
     <!--{{list.creator.avatarUrl}}-->
     <div id="music-head">
       <div class="song-pic">
-        <img :src="list.coverImgUrl+'?param=252y252&amp;quality=75'">
+        <img :src="list.coverImgUrl+'?param=252y252&amp;quality=75'" >
         <span class="tag">歌单</span>
         <p class="count">{{list.trackCount}}</p>
       </div>

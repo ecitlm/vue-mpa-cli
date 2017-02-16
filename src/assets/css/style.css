@@ -12,8 +12,6 @@ body, html {
   font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   max-width:750px;margin: 0 auto;
   position: relative;
-  min-height: 100%;
-  _height:100%;
 }
 #app{
   position: relative;
