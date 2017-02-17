@@ -8,12 +8,12 @@
         <span class="name ellipsis">{{list.title}}</span>
         <div class="scoreBar">
         <span class="star_bg"><i :style="styleObject" class="star"></i></span>
-          <span class="score">7.8分</span>
+          <span class="score">{{list.rating.average}}分</span>
         </div>
         <ul class="mvDescList">
           <li><span>上映：</span>{{list.year}}</li>
-          <li><span>片长：</span>1小时47分钟</li>
-          <li><span>国家：</span>美国</li>
+          <li><span>片长：</span>----------</li>
+          <li><span>国家：</span>{{list.countries[0]}}</li>
         </ul>
       </div>
     </div>
@@ -47,15 +47,18 @@
       return {
         list:{
           rating: {
-            "average": 5.8
+            average: 5.8
           },
           year: "2017",
           images: {
-            "large": "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2410569976.jpg"
+            large: "http://img3.doubanio.com/view/movie_poster_cover/lpst/public/p2410569976.jpg"
           },
+          "countries": [
+            "美国"
+          ],
           directors: [
             {
-              "name": "D·J·卡卢索"
+              name: "D·J·卡卢索"
             }
           ],
 
@@ -66,7 +69,8 @@
       }
     },
     created(){
-      this.get()
+      this.get();
+      this.$emit('title', this.list.title);
     },
     activated(){
       this.get()
