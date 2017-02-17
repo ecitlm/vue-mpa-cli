@@ -3,6 +3,7 @@
   margin: 0;
   text-decoration: none;
   list-style: none;
+  -webkit-tap-highlight-color:transparent
 
 }
 

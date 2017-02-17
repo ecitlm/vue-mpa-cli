@@ -9,6 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "animate.css": "^3.5.2",
     "axios": "^0.15.3",
     "mint-ui": "^2.1.1",
     "vue": "^2.1.10",

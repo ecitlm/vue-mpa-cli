@@ -3,7 +3,12 @@
         <HeadBar></HeadBar>
 
         <keep-alive>
-            <router-view></router-view>
+            <transition
+                    enter-active-class="animated bounceInLeft"
+                    leave-active-class="animated bounceOutRight"
+            >
+                <router-view></router-view>
+            </transition>
         </keep-alive>
     </div>
 </template>

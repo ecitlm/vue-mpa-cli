@@ -29,8 +29,12 @@
                     <router-link to="/music" slot="">音乐</router-link>
                 </li>
 
+                <li>
+                    <router-link to="/movie" slot="">电影</router-link>
+                </li>
+
               <li data="T1348648517839">
-                <router-link to="/" slot="">娱乐</router-link>
+                <router-link to="/wxlist" slot="">微信精选</router-link>
               </li>
 
                 <li data="T1348648141035">
@@ -98,8 +102,7 @@
         data(){
             return {
                 msg: 'hello vue',
-                popupVisible: false,
-                titleType: type
+                popupVisible: false
             }
         },
         watch: {

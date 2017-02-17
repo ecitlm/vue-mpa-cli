@@ -32,7 +32,6 @@
             </div>
           </a>
         </router-link>
-
       </div>
 </template>
 <style>

@@ -10,6 +10,9 @@ import videoplayer  from './components/VideoPlayer.vue'
 import JokeList  from './components/JokeList.vue'
 import music  from './components/music.vue'
 import musicplayer  from './components/MusicPlayer.vue'
+import wxlist  from './components/WxList.vue'
+import wxarticle  from './components/WxArticle.vue'
+import movie  from './components/movie.vue'
 export default{
     //mode: 'history',
     routes: [
@@ -20,6 +23,9 @@ export default{
         {path: '/jokelist', component: JokeList},
         {path: '/music', component: music},
         {path: '/musicplayer', component: musicplayer},
-        {path: '*', redirect: '/home'}
+        {path: '/wxlist', component: wxlist},
+        {path: '/wxarticle', component: wxarticle},
+        {path: '/movie', component: movie},
+        {path: '*', redirect: '/movie'}
     ]
 }

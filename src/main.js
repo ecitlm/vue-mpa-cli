@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import 'mint-ui/lib/style.css'
 import './assets/css/style.css'
+import 'animate.css'
 
 
 
