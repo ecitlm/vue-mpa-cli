@@ -2,7 +2,7 @@
     <div>
         <!--{{list.creator.avatarUrl}}-->
         <div id="music-head">
-            <div class="head-bg" :style="{backgroundImage: 'url(' + list.coverImgUrl +'?param=252y252&quality=75'+ ')'}"></div>
+            <div class="head-bg" :style="{backgroundImage: 'url(' + list.creator.avatarUrl +'?param=2y22&quality=75'+ ')'}"></div>
 
 
             <div class="song-pic">
@@ -16,8 +16,8 @@
                     {{list.name}}
                     <br>
                     <br>
-                    <img src="http://p1.music.126.net/UUVBZwisn4EjaUsaeITqpw==/109951162823117909.jpg?param=60y60&amp;quality=75" class="ava j-lazy z-loaded">
-                    小明同学
+                    <img :src="list.creator.avatarUrl" class="ava j-lazy z-loaded">
+                    {{list.creator.nickname}}
                 </div>
             </div>
 
@@ -90,7 +90,17 @@
     export default{
         data(){
             return {
-                list: {}
+                list: {
+                  creator: {
+                    "avatarUrl": "http://p1.music.126.net/UUVBZwisn4EjaUsaeITqpw==/109951162823117909.jpg",
+                    "nickname": "IT",
+                    "signature": "珍惜朋友，爱自己",
+                    "description": "",
+                    "detailDescription": "",
+                    "backgroundUrl": "http://p1.music.126.net/00ElqS54w-4uW-trWwNPLw==/109951162790078220.jpg"
+                  }
+
+                }
             }
         },
         created(){

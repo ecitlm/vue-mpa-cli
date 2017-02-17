@@ -1,8 +1,6 @@
 /**
  * Created by Administrator on 2016/12/24.
  */
-
-
 import Home from './components/Home.vue'
 import Video  from './components/Video.vue'
 import Article  from './components/Article.vue'
@@ -13,6 +11,8 @@ import musicplayer  from './components/MusicPlayer.vue'
 import wxlist  from './components/WxList.vue'
 import wxarticle  from './components/WxArticle.vue'
 import movie  from './components/movie.vue'
+import moviedetial from './components/MovieDetail.vue'
+
 export default{
     //mode: 'history',
     routes: [
@@ -26,6 +26,7 @@ export default{
         {path: '/wxlist', component: wxlist},
         {path: '/wxarticle', component: wxarticle},
         {path: '/movie', component: movie},
+        {path: '/moviedetial', component: moviedetial},
         {path: '*', redirect: '/movie'}
     ]
 }

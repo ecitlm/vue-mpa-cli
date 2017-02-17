@@ -6,7 +6,7 @@
 
     </div>
 </template>
-<style>
+<style scoped>
     #joke_wrap {
         width: 100%;
         background: #f6f6f6;
@@ -18,7 +18,7 @@
         background: #fff;
         margin-bottom: 10px;
         margin-top: 5px;
-        font-size: 14px;
+        font-size: 16px;
     }
 </style>
 <script>

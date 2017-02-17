@@ -3,7 +3,7 @@
 
         <h3 class="playing">{{list.title}}</h3>
         <section id="list" class="grid">
-            <router-link tag="a" class="item" :to="{ path: 'wxarticle', query: { id: item.id}}" v-for="item in subjects">
+            <router-link tag="a" class="item" :to="{ path: '/moviedetial', query: { id: item.id}} " v-for="item in subjects">
                 <div class="cover">
                     <div class="wp ratio3_4">
                         <img :src="item.images.medium">
@@ -35,7 +35,6 @@
         padding: 20px 0;
         margin-left: auto;
         margin-right: auto;
-        max-width: 660px;
         overflow: hidden;
         box-sizing: border-box;
         display: block;

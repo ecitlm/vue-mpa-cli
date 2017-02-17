@@ -2,14 +2,16 @@
     <div id="app">
         <HeadBar :title="title"></HeadBar>
 
-        <keep-alive>
+
             <transition
                     enter-active-class="animated bounceInLeft"
                     leave-active-class="animated bounceOutRight"
             >
+              <keep-alive>
                 <router-view @title="change" :title="title"></router-view>
+              </keep-alive>
             </transition>
-        </keep-alive>
+
     </div>
 </template>
 
@@ -22,7 +24,7 @@
         },
         data(){
             return{
-                title:"sh"
+                title:"IT"
             }
         },
         methods:{

@@ -200,7 +200,6 @@ body, html {
   right: 0;
   bottom: 0;
   background-position: center center;
-  opacity: 0.5;
   transition: opacity 0.3s;
   transform: scale(1.5);
   transform-origin: center top;
