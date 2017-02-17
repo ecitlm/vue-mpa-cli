@@ -2,7 +2,7 @@
 
     <div class="headerbar">
         <div id="header">
-            <mt-header :title="title" style="background: #f33">
+            <mt-header :title="title" style="background: #f33;height: 50px;font-size: 16px;">
                 <router-link to="/" slot="left">
                     <mt-button icon="back"></mt-button>
                 </router-link>
@@ -12,7 +12,7 @@
 
         <mt-popup
                 v-model="popupVisible" position="top"
-                popup-transition="popup-fade" style="top:40px">
+                popup-transition="popup-fade" style="top:50px">
             <ul id="title-list">
 
 
@@ -76,7 +76,8 @@
         width: 100%;
         width: 100%;
         position: relative;
-        height: 40px;
+        height: 50px;
+        z-index:999;
     }
 
     #header {
@@ -87,8 +88,8 @@
         width: 100%;
         z-index: 2;
         clear: both;
+        height:50px;
     }
-
     #title-list li a {
         color: #666;
     }
