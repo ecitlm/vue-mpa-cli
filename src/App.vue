@@ -1,13 +1,13 @@
 <template>
     <div id="app">
-        <HeadBar></HeadBar>
+        <HeadBar :title="title"></HeadBar>
 
         <keep-alive>
             <transition
                     enter-active-class="animated bounceInLeft"
                     leave-active-class="animated bounceOutRight"
             >
-                <router-view></router-view>
+                <router-view @title="change" :title="title"></router-view>
             </transition>
         </keep-alive>
     </div>
@@ -19,6 +19,17 @@
         name: 'app',
         components: {
             HeadBar
+        },
+        data(){
+            return{
+                title:"sh"
+            }
+        },
+        methods:{
+            change(title) {
+                this.title = title;
+            }
+
         }
     }
 </script>

@@ -94,6 +94,7 @@
             }
         },
         created(){
+            this.$emit('title','热播电影');
             this.get();
         },
         methods: {

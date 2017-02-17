@@ -2,7 +2,7 @@
 
     <div class="headerbar">
         <div id="header">
-            <mt-header title="小易163" style="background: #f33">
+            <mt-header :title="title" style="background: #f33">
                 <router-link to="/" slot="left">
                     <mt-button icon="back"></mt-button>
                 </router-link>
@@ -99,6 +99,7 @@
 <script>
 
     export default{
+        props:["title"],
         data(){
             return {
                 msg: 'hello vue',

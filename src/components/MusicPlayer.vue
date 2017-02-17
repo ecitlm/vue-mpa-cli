@@ -37,6 +37,7 @@
         },
         created(){
             this.get();
+
             console.log("组件Cretated")
         },
         activated(){
@@ -75,6 +76,7 @@
                     };
                     Indicator.close();
                     this.$emit("music", this.music);
+                    this.$emit('title',this.music.title);
 
                 }.bind(this)).catch(function (error) {
                     console.log(error)

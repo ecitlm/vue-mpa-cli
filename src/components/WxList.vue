@@ -41,6 +41,7 @@
         },
         created(){
             this.get();
+            this.$emit('title', '微信精选');
         },
         methods: {
             get: function () {

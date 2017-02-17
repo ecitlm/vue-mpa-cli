@@ -85,9 +85,9 @@
       created(){
             this.get();
             this.getBanner();
+             this.$emit('title','首页')
 
       },
-
       methods:{
         get:function(){
 

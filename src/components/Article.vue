@@ -20,6 +20,8 @@
     },
     created(){
       this.getArticle();
+      this.$emit('title','文章详情');
+
     },
       activated(){
           this.article={};
