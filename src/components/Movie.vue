@@ -120,7 +120,7 @@
             },
             loadMore: function () {
 
-                this.start = this.start + this.count+1;
+                this.start = this.start + this.count + 1;
                 this.get();
 
             }
