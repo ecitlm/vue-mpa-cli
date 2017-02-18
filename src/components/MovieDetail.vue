@@ -73,7 +73,8 @@
       this.$emit('title', this.list.title);
     },
     activated(){
-      this.get()
+      this.get();
+      this.$emit('title', this.list.title);
     },
     methods: {
       loading: function () {
@@ -88,6 +89,7 @@
           .then(function (res) {
             this.list=res.data
             this.styleObject.width=res.data.rating.average*10+"%";
+            this.$emit('title', this.list.title);
 
             Indicator.close();
           }.bind(this))

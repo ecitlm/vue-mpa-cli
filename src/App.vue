@@ -1,8 +1,6 @@
 <template>
     <div id="app">
         <HeadBar :title="title"></HeadBar>
-
-
             <transition
                     enter-active-class="animated bounceInLeft"
                     leave-active-class="animated bounceOutRight"

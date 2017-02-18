@@ -6,7 +6,6 @@
 //接口代理API
 global.apiProxy = 'https://bird.ioliu.cn/v1?url=http://c.m.163.com/nc/';
 global.api = "https://bird.ioliu.cn/v1?url=http://c.m.163.com/";
-global.birdapi = "https://bird.ioliu.cn/netease?playlist_id="
 global.musicApi = "https://bird.ioliu.cn/v1?url=http://music.163.com/api/song/detail/?id=";
 global.weixin = "https://bird.ioliu.cn/v1?url=http://v.juhe.cn/weixin/query?key=d046cd1f569ed13d951f0258902ef9b2";
 
@@ -24,5 +23,13 @@ global.apiurl = {
   MovieDetail: function (id) {
     return (jsonbird + "http://api.douban.com/v2/movie/subject/" + id);
 
+  },
+  MusicType:function (id) {
+    return ("https://bird.ioliu.cn/netease?playlist_id="+id);
+
+  },
+  photoApi:function (start,count) {
+    var url=jsonbird+"http://pic.news.163.com/photocenter/api/list/0031/6LRK0031/"+start+"/"+count+"/index.json";
+    return url;
   }
 }

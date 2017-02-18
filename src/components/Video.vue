@@ -1,30 +1,16 @@
 <template>
     <div class="video">
-
-        <!--<div class="video-play" v-for="item in list ">
-          <video :src="item.mp4_url" controls="controls" :poster="item.cover">
-          </video>
-          <h3>{{item.title}}</h3>
-        </div>-->
-
-        <router-link tag="section" class="video-item" :to="{ path: '/player', query: { id: item.mp4_url}}" v-for="(item,index) in list">
-            <!--{{index}}-->
-            <a :href="{ path: '/player', query: { id: item.mp4_url }}">
-                <div class="v-poster">
-                    <img
-                            :src="item.cover">
+        <section  class="video-item"  v-for="(item,index) in list" @click="pushUrl(index)">
+                <div class="v-poster" >
+                    <img :src="item.cover">
                 </div>
                 <div class="v-mask">
                     <div class="v-head">
                         <div class="v-play"></div>
                         <div class="v-title">{{item.title}}</div>
-
                     </div>
-
                 </div>
-            </a>
-        </router-link>
-
+        </section>
     </div>
 </template>
 <style>
@@ -36,7 +22,6 @@
     export default{
         data(){
             return {
-                msg: 'hello vue',
                 list: {}
             }
         },
@@ -51,13 +36,17 @@
         methods: {
             get: function () {
                 axios.get(apiProxy + 'video/home/10-20.html').then(function (res) {
-                    console.log(res.data);
+                    console.log(res.data.videoList);
                     this.list = res.data.videoList;
                     Indicator.close();
 
                 }.bind(this)).catch(function (error) {
                     console.log(error)
                 })
+            },
+            pushUrl:function (index) {
+                sessionStorage.setItem("videodetail",JSON.stringify(this.list[index]));
+                this.$router.push({path:'/player'});
             }
         }
     }

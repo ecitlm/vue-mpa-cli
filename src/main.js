@@ -8,32 +8,29 @@ import 'animate.css'
 
 
 
-
 import apiConfig from './api/config.js'
 import VueRouter from 'vue-router'
 import routerConfig from './router.config.js'
 Vue.use(VueRouter);
-const router=new VueRouter(routerConfig);
+const router = new VueRouter(routerConfig);
 
 //import mint-ui
 import Mint from 'mint-ui';
 Vue.use(Mint);
 
-//import video-player
-import VideoPlayer from 'vue-video-player'
-Vue.use(VideoPlayer)
 
-// 可以在这里配置全局的功能开关（当然也会被局部开关给覆盖），这里非必选
-VideoPlayer.config({
-  youtube: true,  // default false（youtube的支持）
-  switcher: true, // default true（播放源切换功能）
-  hls: true       // default true（直播功能的支持）
-})
+Vue.filter("minutes", function(value) {
+  //全局方法 Vue.filter() 注册一个自定义过滤器,必须放在Vue实例化前面
+  return (Math.floor(value /60) + ":" + Math.floor(value % 60));
+});
+
 
 new Vue({
-    router,
-    apiConfig,
-    el: '#app',
-    template: '<App/>',
-    components: { App }
+  router,
+  apiConfig,
+  el: '#app',
+  template: '<App/>',
+  components: {
+    App
+  }
 })

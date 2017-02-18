@@ -3,7 +3,7 @@
   <div class="headerbar">
     <div id="header">
       <mt-header :title="title" style="background: #f33;height: 50px;font-size: 16px;">
-        <router-link to="/" slot="left" @click="window.history.go(-1)">
+        <router-link to="/" slot="left" >
           <mt-button icon="back"></mt-button>
         </router-link>
         <mt-button icon="more" slot="right" @click.native="show"></mt-button>
@@ -24,7 +24,7 @@
         </li>
 
         <li data="">
-          <router-link to="/music" slot="">音乐</router-link>
+          <router-link to="/musiclist" slot="">音乐</router-link>
         </li>
 
         <li>

@@ -2,7 +2,7 @@
     <div>
         <!--{{list.creator.avatarUrl}}-->
         <div id="music-head">
-            <div class="head-bg" :style="{backgroundImage: 'url(' + list.creator.avatarUrl +'?param=2y22&quality=75'+ ')'}"></div>
+            <div class="head-bg" :style="{backgroundImage: 'url(' + list.creator.avatarUrl +'?param=12y22&quality=75'+ ')'}"></div>
 
 
             <div class="song-pic">
@@ -13,9 +13,7 @@
             <div class="cnt">
                 <h2 class="j-plname"></h2>
                 <div class="art s-fc3 f-thide">
-                    {{list.name}}
-                    <br>
-                    <br>
+                   <p class="m-title"> {{list.name}}</p>
                     <img :src="list.creator.avatarUrl" class="ava j-lazy z-loaded">
                     {{list.creator.nickname}}
                 </div>
@@ -53,12 +51,14 @@
 <style>
     .m-intr {
         position: relative;
-        margin: 0 10px 0 15px;
+        margin: 0 10px 5px 15px;
         font-size: 14px;
         line-height: 19px;
         float: left;
         font-weight: normal;
         font-style: normal;
+        max-height:135px;
+      overflow: hidden;
     }
 
     .m-intr .tags {
@@ -99,22 +99,27 @@
                     "detailDescription": "",
                     "backgroundUrl": "http://p1.music.126.net/00ElqS54w-4uW-trWwNPLw==/109951162790078220.jpg"
                   }
-
                 }
             }
         },
         created(){
             this.$emit('title', '音乐播放');
-            this.get();
         },
+      activated(){
+            this.get();
+            this.$emit('title', '音乐播放');
+      },
         methods: {
+            loading:function () {
+              Indicator.open({
+                text: '加载中...',
+                spinnerType: 'fading-circle'
+              });
+            },
             get: function () {
-                Indicator.open({
-                    text: '加载中...',
-                    spinnerType: 'fading-circle'
-                });
-                axios.get(birdapi + '428474016').then(function (res) {
-                    //console.log(JSON.stringify(res.data.data.result));
+                this.loading();
+                var id=this.$route.query.id;
+                axios.get(apiurl.MusicType(id)).then(function (res) {
                     this.list = res.data.data.result;
                     Indicator.close();
 

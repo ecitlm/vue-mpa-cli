@@ -1,36 +1,58 @@
 <template>
-  <div>
-  <!--  <span>路由查询参数：{{$route.query.id}}</span>-->
-    <video-player :options="videoOptions"></video-player>
-  </div>
+    <!--  <span>路由查询参数：{{$route.query.id}}</span>-->
+  <div class="v-plays" >
+    <video :src="video.mp4_url" controls="controls" autoplay  :poster="video.cover">
+    </video>
+          <h3>{{video.title}}</h3>
+          <p><img :src="video.topicImg" alt=""> {{video.topicName}}<span>{{video.length  | minutes}}''</span></p>
+        </div>
 </template>
+<style>
+  .v-plays{
+    width:100%;
+  }
+  .v-plays video{
+    width:100%;
+  }
+  .v-plays h3{
+    color: #404040;
+    margin:5px 10px;
+    padding-top:5px;
+    font-weight:400;
+    font-size:16px;
+    border-top:1px solid #eee;
+  }
+  .v-plays p{
+    padding:0 10px;
+    font-size:14px;
+    line-height:25px;
 
+  }
+  .v-plays p img{
+    border-radius: 50%;
+    width:25px;
+    float: left;
+    margin-right:10px;
+  }
+  .v-plays p span{
+    font-size:12px;
+    float: right;}
+</style>
 <script>
   export default {
     data() {
       return {
-        videoOptions: {
-          source: [{
-            type: "video/mp4",
-            src: this.$route.query.id,
-            label: "原画",
-            res: 1
-          }],
-          language: "zh-CN",
-          playbackRates: [0.7, 1, 1.3, 1.5, 1.7],
-          poster: "http://www.freemake.com/blog/wp-content/uploads/2015/06/videojs-logo.jpg",
-          defaultSrcReId: 2,
-          height: 260,
-          autoplay: true
-        }
+          video:{}
       }
     },
     activated(){
-      //console.log(JSON.stringify(this.videoOptions))
-      this.videoOptions.source[0].src=this.$route.query.id;
+      this.getData();
+      this.$emit('title','热播视频-详情');
     },
-    created(){
-
+    methods:{
+        getData:function () {
+            this.video=JSON.parse(sessionStorage.getItem('videodetail'));
+        }
     }
   }
 </script>

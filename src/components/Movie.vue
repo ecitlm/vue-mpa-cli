@@ -93,9 +93,11 @@
             }
         },
         created(){
-            this.$emit('title','热播电影');
-            this.get();
         },
+      activated(){
+        this.$emit('title','热播电影');
+        this.get();
+      },
         methods: {
             loading: function () {
                 Indicator.open({
@@ -111,18 +113,16 @@
                         this.subjects = this.subjects.concat(response.data.subjects);
 
                         this.list.subjects = this.subjects;
-
                         Indicator.close();
+                        this.$emit('title','热播电影');
                     }.bind(this))
                     .catch(function (error) {
                         console.log(error);
                     })
             },
             loadMore: function () {
-
                 this.start = this.start + this.count + 1;
                 this.get();
-
             }
         },
         components: {}

@@ -3,7 +3,8 @@
   margin: 0;
   text-decoration: none;
   list-style: none;
-  -webkit-tap-highlight-color:transparent
+  -webkit-tap-highlight-color:transparent;
+  font-style: normal;
 
 }
 
@@ -14,6 +15,10 @@ body, html {
   max-width:750px;margin: 0 auto;
   position: relative;
 }
+.fr{
+  float: right;}
+.fl{
+  float: left;}
 #app{
   position: relative;
   width:100%;
@@ -255,6 +260,7 @@ body, html {
 .cnt {
   margin-left: 15px;
   float: left;
+  width: 60%;
 }
 
 .j-plname {
@@ -272,7 +278,7 @@ body, html {
 
 .cnt .art {
   position: relative;
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 14px;
   color: #888;
 }
@@ -284,7 +290,13 @@ body, html {
   vertical-align: middle;
   margin-right: 5px;
 }
-
+.m-title{
+  max-height:40px;
+  line-height:20px;
+  display: block;
+  padding:3px 0;
+  overflow: hidden;
+}
 .m-bill {
   width: 100%;
   float: left;
