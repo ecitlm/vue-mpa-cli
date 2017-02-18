@@ -45,8 +45,7 @@
         },
         methods: {
             get: function () {
-                axios.get(api + 'recommend/getChanRecomNews?channel=duanzi&size=' + this.size).then(function (res) {
-                    console.log(res.data.段子);
+                axios.get(apiurl.jokeApi(this.size)).then(function (res) {
                     this.list = res.data.段子;
                     Indicator.close();
 

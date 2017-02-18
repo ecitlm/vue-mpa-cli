@@ -14,6 +14,7 @@ import wxarticle  from './components/WxArticle.vue'
 import movie  from './components/movie.vue'
 import moviedetial from './components/MovieDetail.vue'
 import photo from './components/photo.vue'
+import view from './components/PhotoView.vue'
 export default{
     //mode: 'history',
     routes: [
@@ -30,6 +31,7 @@ export default{
         {path: '/movie', component: movie},
         {path: '/moviedetial', component: moviedetial},
         {path: '/photo', component: photo},
+        {path: '/view', component: view},
         {path: '*', redirect: '/photo'}
     ]
 }

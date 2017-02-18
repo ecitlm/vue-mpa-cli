@@ -14,22 +14,27 @@ global.jkAPikey = "d046cd1f569ed13d951f0258902ef9b2";
 const jsonbird = "https://bird.ioliu.cn/v1?url=";
 
 global.apiurl = {
-  WxUrl: function (ps) {
-    return (jsonbird + "http://v.juhe.cn/weixin/query?key=" + jkAPikey + "&ps=" + ps);
-  },
-  PlayingMovie: function (start, count) {
-    return (jsonbird + "http://api.douban.com/v2/movie/in_theaters?start=" + start + "&count=" + count);
-  },
-  MovieDetail: function (id) {
-    return (jsonbird + "http://api.douban.com/v2/movie/subject/" + id);
+    WxUrl: function (ps) {
+        return (jsonbird + "http://v.juhe.cn/weixin/query?key=" + jkAPikey + "&ps=" + ps);
+    },
+    PlayingMovie: function (start, count) {
+        return (jsonbird + "http://api.douban.com/v2/movie/in_theaters?start=" + start + "&count=" + count);
+    },
+    MovieDetail: function (id) {
+        return (jsonbird + "http://api.douban.com/v2/movie/subject/" + id);
 
-  },
-  MusicType:function (id) {
-    return ("https://bird.ioliu.cn/netease?playlist_id="+id);
+    },
+    MusicType: function (id) {
+        return ("https://bird.ioliu.cn/netease?playlist_id=" + id);
 
-  },
-  photoApi:function (start,count) {
-    var url=jsonbird+"http://pic.news.163.com/photocenter/api/list/0031/6LRK0031/"+start+"/"+count+"/index.json";
-    return url;
-  }
+    },
+    photoApi: function (start, count) {
+        var url = jsonbird + "http://pic.news.163.com/photocenter/api/list/0031/6LRK0031/" + start + "/" + count + "/index.json";
+        return url;
+    },
+    jokeApi:function (size) {
+        var jokeUrl= jsonbird+'http://c.m.163.com/recommend/getChanRecomNews?channel=duanzi&size=' + size;
+        return jokeUrl;
+    }
+    
 }
