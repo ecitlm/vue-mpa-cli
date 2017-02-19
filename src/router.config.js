@@ -34,6 +34,6 @@ export default{
         {path: '/photo', component: photo},
         {path: '/view', component: view},
         {path: '/lyric', component: lyric},
-        {path: '*', redirect: '/lyric'}
+        {path: '*', redirect: '/home'}
     ]
 }

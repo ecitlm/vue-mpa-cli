@@ -40,17 +40,12 @@
                 <li data="T1348648517839">
                     <router-link to="/wxlist" slot="">微信精选</router-link>
                 </li>
+                <li @click="tip">程序猿</li>
+                <li @click="tip">科技</li>
+                <li @click="tip">教育</li>
+                <li @click="tip">健康</li>
+                <li @click="tip">亲子</li>
 
-                </li>
-                <li>程序猿</li>
-                <li>视频</li>
-                <li>段子</li>
-                <li>科技</li>
-                <li>跟贴</li>
-                <li>教育</li>
-                <li>健康</li>
-                <li>亲子</li>
-                <li>彩票</li>
 
 
             </ul>
@@ -106,6 +101,10 @@
             },
             fatched: function () {
                 this.popupVisible = false;
+            },
+            tip:function () {
+                alert("后面再完善上去")
+
             }
         },
         components: {}
