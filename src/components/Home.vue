@@ -91,7 +91,7 @@
       methods:{
         get:function(){
 
-          axios.get(apiProxy+'/article/headline/T1348648037603/10-10.html').then(function(res){
+          axios.get(apiProxy+'/article/headline/T1348648037603/0-10.html').then(function(res){
             this.list=res.data.T1348648037603;
           }.bind(this)).catch(function(error){
             console.log(error)

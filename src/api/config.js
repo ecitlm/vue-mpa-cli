@@ -35,6 +35,14 @@ global.apiurl = {
     jokeApi:function (size) {
         var jokeUrl= jsonbird+'http://c.m.163.com/recommend/getChanRecomNews?channel=duanzi&size=' + size;
         return jokeUrl;
+    },
+    videoType:function () {
+        var  vt= jsonbird+"http://c.m.163.com/nc/video/topiclist.html";
+        return vt;
+    },
+    videoTypeData:function (type,start,count) {
+        var  vtd= jsonbird+"http://c.m.163.com/nc/video/Tlist/"+type+"/"+start+-"+"+count+".html";
+        return vtd;
     }
     
 }

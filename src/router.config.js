@@ -15,6 +15,7 @@ import movie  from './components/movie.vue'
 import moviedetial from './components/MovieDetail.vue'
 import photo from './components/photo.vue'
 import view from './components/PhotoView.vue'
+import lyric from './components/Lyric.vue'
 export default{
     //mode: 'history',
     routes: [
@@ -32,6 +33,7 @@ export default{
         {path: '/moviedetial', component: moviedetial},
         {path: '/photo', component: photo},
         {path: '/view', component: view},
-        {path: '*', redirect: '/photo'}
+        {path: '/lyric', component: lyric},
+        {path: '*', redirect: '/lyric'}
     ]
 }
