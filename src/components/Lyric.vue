@@ -22,17 +22,28 @@
                     "lyric": "[00:00.00] 作曲 : 周杰伦\n[00:01.00]"
                 },
                 newLyric:null,
-                mp3:"http://code.it919.cn/gbqq.mp3",
+                mp3:"http://192.168.1.2:302/gbqq.mp3",
                 top:200
             }
         },
         created(){
 
         },
+        //keep-alive之后
+        activated(){
+            this.ajaxLyric();//重新获取一次歌词
+
+            console.info("------------生命周期: activated----------");
+
+        },
         mounted(){
             this. ajaxLyric();
 
         },
+        deactivated: function () {
+            console.log("组件更改了了 deactivated")
+        },
+
         methods: {
             //请求歌词接口
             ajaxLyric: function () {
@@ -86,20 +97,20 @@
                 var lis=uls.getElementsByTagName("li");
                 var _this = this;
 
+
+
                 audio.addEventListener("timeupdate", function () {
+
                     for (var i = 0, l =  _this.newLyric.length; i < l; i++) {
                         if (this.currentTime  >  _this.newLyric[i][0]) {
-
                             _this.top=-i*25;
-                            lis[i+1].className="current";
+                            lis[i].className="current";
+
+                        }else{
                         }
                     }
-
                 });
-
             }
-
-
         },
         components: {}
     }

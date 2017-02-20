@@ -47,8 +47,9 @@
                 axios.get(apiurl.photoApi(this.start, this.count)).then(function (res) {
 
                     //返回的数据外层竟然有index()包裹
-                    //  this.list = JSON.parse(res.data.status.message.rawResponse.substring(6).slice(0, -1)); //得到最新的数据
-                    this.list = this.list.concat(JSON.parse(res.data.status.message.rawResponse.substring(6).slice(0, -1)));
+                    //this.list = JSON.parse(res.data.status.substring(6).slice(0, -1)); //得到最新的数据
+
+                    this.list = this.list.concat(JSON.parse(res.data.substring(6).slice(0, -1)));
                     Indicator.close();
 
                 }.bind(this)).catch(function (error) {

@@ -84,7 +84,7 @@
         },
         //keep-alive之后
         activated(){
-           // this.ajaxLyric();//重新获取一次歌词
+            this.ajaxLyric();//重新获取一次歌词
             this.currentTime = 0;
             this.get();
             console.info("------------生命周期: activated----------");
