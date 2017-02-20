@@ -17,6 +17,7 @@ const Proxy = "http://192.168.1.2:7788/?apiProxy=";//内网api代理
 //const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
 
 
+//定义api 接口
 global.apiurl = {
     WxUrl: function (ps) {
         return (Proxy + "http://v.juhe.cn/weixin/query?key=" + jkAPikey + "&ps=" + ps);

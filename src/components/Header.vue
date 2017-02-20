@@ -3,9 +3,9 @@
     <div class="headerbar">
         <div id="header">
             <mt-header :title="title" style="background: #f33;height: 50px;font-size: 16px;">
-                <router-link to="/" slot="left">
-                    <mt-button icon="back"></mt-button>
-                </router-link>
+                <a slot="left" href="javascript:window.history.go(-1)">
+                    <mt-button icon="back" ></mt-button>
+                </a>
                 <mt-button icon="more" slot="right" @click.native="show"></mt-button>
             </mt-header>
         </div>

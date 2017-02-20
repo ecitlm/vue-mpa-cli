@@ -104,9 +104,9 @@
         },
         created(){
             this.$emit('title', '音乐播放');
+            this.get();
         },
       activated(){
-            this.get();
             this.$emit('title', '音乐播放');
       },
         methods: {
