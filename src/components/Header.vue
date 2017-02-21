@@ -17,35 +17,72 @@
 
 
                 <li>
-                    <router-link to="/home" slot="">首页</router-link>
+
+                    <router-link to="/home" slot="">
+                        <i class="iconfont icon-home"></i>
+                        首页
+                    </router-link>
                 </li>
                 <li>
-                    <router-link to="/video" slot="">视频</router-link>
+                    <router-link to="/video" slot="">
+                        <i class="iconfont icon-video"></i>
+                        视频
+                    </router-link>
                 </li>
 
                 <li data="">
-                    <router-link to="/musiclist" slot="">音乐</router-link>
+                    <router-link to="/musiclist" slot="">
+                        <i class="iconfont icon-music"></i>
+                        音乐
+                    </router-link>
                 </li>
 
                 <li>
-                    <router-link to="/movie" slot="">电影</router-link>
+                    <router-link to="/movie" slot="">
+                        <i class="iconfont icon-player"></i>
+                        电影
+                    </router-link>
                 </li>
                 <li>
-                    <router-link to="/photo" slot="">美图</router-link>
+                    <router-link to="/photo" slot="">
+                        <i class="iconfont icon-meinv"></i>
+                        美图
+                    </router-link>
                 </li>
                 <li data="">
-                    <router-link to="/jokelist" slot="">段子</router-link>
+                    <router-link to="/jokelist" slot="">
+                        <i class="iconfont icon-duanzi"></i>
+                        段子
+                    </router-link>
                 </li>
 
                 <li data="T1348648517839">
-                    <router-link to="/wxlist" slot="">微信精选</router-link>
+                    <router-link to="/wxlist" slot="">
+                        <i class="iconfont icon-wx"></i>
+                        微信精选
+                    </router-link>
                 </li>
-                <li @click="tip">程序猿</li>
-                <li @click="tip">科技</li>
-                <li @click="tip">教育</li>
-                <li @click="tip">健康</li>
-                <li @click="tip">亲子</li>
 
+                <li data="T1348648517839">
+                    <router-link to="#" slot="">
+                        <i class="iconfont icon-edu"></i>
+                        教育
+                    </router-link>
+                </li>
+
+                <li data="T1348648517839">
+                    <router-link to="#" slot="">
+                        <i class="iconfont icon-sport"></i>
+                        体育
+                    </router-link>
+                </li>
+
+                <li data="T1348648517839">
+                    <router-link to="#" slot="">
+                        <i class="iconfont icon-code"></i>
+                       IT科技
+                    </router-link>
+                </li>
 
 
             </ul>
@@ -55,7 +92,7 @@
 
 
 </template>
-<style>
+<style scoped>
     .headerbar {
         width: 100%;
         position: relative;
@@ -76,10 +113,15 @@
 
     #title-list li a {
         color: #666;
+        font-size:14px;
     }
 
     #title-list li a.router-link-active {
         color: red;
+    }
+    #title-list li i{
+        display: block;
+        font-size:30px;
     }
 </style>
 <script>

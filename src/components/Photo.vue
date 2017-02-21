@@ -1,13 +1,10 @@
 <template>
     <div>
-
         <div class="container">
             <div class="waterfall">
 
-                <div class="waterlist list" v-for="(item ,index)  in  list" @click="pushUrl(index)">
-                    <!--  {{index}}-->
-                    <img :src="item.cover">
-                    <p>{{item.setname}}</p>
+                <div class="waterlist list" v-for="(item ,index) in  list" @click="pushUrl(index)">
+                    <img :src="item.share_url">
                 </div>
 
             </div>
@@ -26,7 +23,7 @@
             return {
                 list: [],
                 start: 0,
-                count: 12
+                count: 20
             }
         },
         created(){
@@ -46,10 +43,8 @@
                 this.loading();
                 axios.get(apiurl.photoApi(this.start, this.count)).then(function (res) {
 
-                    //返回的数据外层竟然有index()包裹
-                    //this.list = JSON.parse(res.data.status.substring(6).slice(0, -1)); //得到最新的数据
-
-                    this.list = this.list.concat(JSON.parse(res.data.substring(6).slice(0, -1)));
+                    console.log(res.data);
+                    this.list = this.list.concat(res.data.data);
                     Indicator.close();
 
                 }.bind(this)).catch(function (error) {
@@ -57,8 +52,8 @@
                 })
             },
             pushUrl: function (index) {
-                sessionStorage.setItem("photoview",JSON.stringify(this.list[index]));
-                this.$router.push({path:'/view'});
+               // sessionStorage.setItem("photoview",JSON.stringify(this.list[index]));
+                //this.$router.push({path:'/view'});
 
             },
             loadMore: function () {
@@ -85,8 +80,8 @@
     }
 
     .waterlist {
-        padding: 0 10px;
-        margin: 10px;
+        padding: 0 5px;
+        margin: 7px;
         break-inside: avoid;
         background: white;
     }

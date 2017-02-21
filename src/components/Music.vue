@@ -103,11 +103,13 @@
             }
         },
         created(){
-            this.$emit('title', '音乐播放');
-            this.get();
+           // this.$emit('title', '音乐播放');
+            //this.get();
         },
       activated(){
             this.$emit('title', '音乐播放');
+            this.get();
+        
       },
         methods: {
             loading:function () {
