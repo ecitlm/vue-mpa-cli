@@ -288,19 +288,12 @@
     .m-circle {
         opacity: 1;
         z-index: 999;
-        width: 50%;
+        width: 40%;
         display: block;
-        background: url("http://music.163.com/style/mobile/img/share/disc.png");
-        padding: 30px;
-        -webkit-background-size: 100% 100%;
-        background-size: 100% 100%;;
         border-radius: 50%;
         margin: 0 auto;
         margin-top: 30%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-
+        padding-bottom:20px;
     }
 
     .m-circle img {
@@ -308,6 +301,8 @@
         height: 100%;
         margin: 0 auto;
         border-radius: 50%;
+        border:20px solid #333;
+        box-sizing: border-box;
     }
 
     /*audio player*/

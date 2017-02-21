@@ -17,9 +17,12 @@
                 msg: 'hello vue'
             }
         },
-        methods: {},
+
         created(){
-            // this.changeSrc()
+             this.$emit('title', '微信精读');
+        },
+         methods: {
+            
         },
         components: {}
     }
