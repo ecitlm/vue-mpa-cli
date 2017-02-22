@@ -3,7 +3,10 @@
  * @Date:   2017-02-14 15:14
  */
 //接口代理API
+global.apiProxy = 'https://bird.ioliu.cn/v1?url=http://c.m.163.com/nc/';
+
 const Proxy = "http://192.168.1.2:7788/?apiProxy=";//内网api代理
+
 //外网测试环境 api代理
 //const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
 
@@ -20,6 +23,7 @@ global.apiurl = {
     Article:function (id) {
         var art=Proxy+'http://c.m.163.com/nc/article/' + id + '/full.html';
         return art;
+
     },
     WxUrl: function (ps) {
         const jkAPikey = "d046cd1f569ed13d951f0258902ef9b2"; //聚合Appkey
