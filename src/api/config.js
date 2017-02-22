@@ -1,8 +1,7 @@
 /**
- * Created by liuming.
+ * Created by ecitlm.
  * @Date:   2017-02-14 15:14
  */
-
 // 内网api代理
 const Proxy = "http://192.168.1.2:7788/?apiProxy=";
 
