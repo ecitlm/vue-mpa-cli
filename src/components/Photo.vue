@@ -42,11 +42,8 @@
             getPhoto: function () {
                 this.loading();
                 axios.get(apiurl.photoApi(this.start, this.count)).then(function (res) {
-
-                    console.log(res.data);
                     this.list = this.list.concat(res.data.data);
                     Indicator.close();
-
                 }.bind(this)).catch(function (error) {
                     console.log(error)
                 })

@@ -35,7 +35,7 @@
     methods: {
       getArticle: function () {
         var id = String(this.$route.query.id);
-        axios.get(apiProxy + 'article/' + id + '/full.html').then(function (res) {
+        axios.get(apiurl.Article(id)).then(function (res) {
           Indicator.close();
           console.log(res.data);
           (typeof res.data[id] == "object") ? this.article = res.data[id] : this.article = {"body": "该内容已删除"};

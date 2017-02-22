@@ -2,24 +2,27 @@
  * Created by liuming.
  * @Date:   2017-02-14 15:14
  */
-
 //接口代理API
-global.apiProxy = 'https://bird.ioliu.cn/v1?url=http://c.m.163.com/nc/';
-global.api = "https://bird.ioliu.cn/v1?url=http://c.m.163.com/";
-
-global.weixin = "https://bird.ioliu.cn/v1?url=http://v.juhe.cn/weixin/query?key=d046cd1f569ed13d951f0258902ef9b2";
-
-global.jkAPikey = "d046cd1f569ed13d951f0258902ef9b2"; //聚合Appkey
-
-//const Proxy = "http://192.168.1.2:7788/?apiProxy=";//内网api代理
-
+const Proxy = "http://192.168.1.2:7788/?apiProxy=";//内网api代理
 //外网测试环境 api代理
-const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
-
+//const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
 
 //定义api 接口
 global.apiurl = {
+    indexBanner: function () {
+       var banner= Proxy+"http://c.m.163.com/nc/article/headline/T1348648037603/0-10.html";
+       return banner;
+    },
+    indexNews:function (count) {
+        var news=Proxy+"http://c.m.163.com/nc/article/headline/list/0"+"-"+count+".html?from=toutiao&passport=&devId";
+        return news
+    },
+    Article:function (id) {
+        var art=Proxy+'http://c.m.163.com/nc/article/' + id + '/full.html';
+        return art;
+    },
     WxUrl: function (ps) {
+        const jkAPikey = "d046cd1f569ed13d951f0258902ef9b2"; //聚合Appkey
         return (Proxy + "http://v.juhe.cn/weixin/query?key=" + jkAPikey + "&ps=" + ps);
     },
     PlayingMovie: function (start, count) {
@@ -33,7 +36,7 @@ global.apiurl = {
         return ("https://bird.ioliu.cn/netease?playlist_id=" + id);
     },
     photoApi: function (start, count) {
-        var url = Proxy+"http://image.baidu.com/channel/listjson?pn="+start+"&rn="+count+"&tag1=%E7%BE%8E%E5%A5%B3";
+        var url = Proxy + "http://image.baidu.com/channel/listjson?pn=" + start + "&rn=" + count + "&tag1=%E7%BE%8E%E5%A5%B3";
         return url;
     },
     jokeApi: function (size) {
@@ -58,7 +61,7 @@ global.apiurl = {
         var lyric = Proxy + "http://music.163.com/api/song/lyric?id=" + id + "&lv=-1";
         return lyric;
     },
-    zhihu:function () {
-        var zh= Proxy +"https://zhuanlan.zhihu.com/api/columns/wxyyxc1992";
+    zhihu: function () {
+        var zh = Proxy + "https://zhuanlan.zhihu.com/api/columns/wxyyxc1992";
     }
 }

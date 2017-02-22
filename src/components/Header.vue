@@ -14,10 +14,7 @@
                 v-model="popupVisible" position="top"
                 popup-transition="popup-fade" style="top:50px">
             <ul id="title-list">
-
-
                 <li>
-
                     <router-link to="/home" slot="">
                         <i class="iconfont icon-home"></i>
                         首页
