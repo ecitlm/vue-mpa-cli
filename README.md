@@ -21,7 +21,8 @@ npm run dev
 
  ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music1-%E5%88%86%E7%B1%BB.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music2-%E5%88%86%E7%B1%BB%E6%AD%8C%E5%8D%95.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music3-音乐播放.jpg) 
 
- ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/photo1-%E5%88%86%E7%B1%BB.jpg) 
- ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%E8%A7%86%E9%A2%911.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%E7%AC%91%E8%AF%9D%E6%AE%B5%E5%AD%90.jpg ) 
+ ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/photo1-%E5%88%86%E7%B1%BB.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%E8%A7%86%E9%A2%911.jpg) 
+ 
+ ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%E7%AC%91%E8%AF%9D%E6%AE%B5%E5%AD%90.jpg ) 
 
 
