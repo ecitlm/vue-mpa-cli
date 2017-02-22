@@ -14,17 +14,14 @@ npm run dev
 ```
 
 
- ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/index1.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/index2.jpg)
+ ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/index1.jpg) ![图片](https://dn-coding-net-production-pp.qbox.me/a271b902-089f-4a1b-8879-357a113b66e5.png)
 
  ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/master/UI/%25E7%2594%25B5%25E5%25BD%25B11-%25E7%2583%25AD%25E6%2592%25AD%25E5%2588%2597%25E8%25A1%25A8.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%25E7%2594%25B5%25E5%25BD%25B12-%25E8%25AF%25A6%25E6%2583%2585.jpg)
 
 
- ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music1-%E5%88%86%E7%B1%BB.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music2-%E5%88%86%E7%B1%BB%E6%AD%8C%E5%8D%95.jpg) 
+ ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music1-%E5%88%86%E7%B1%BB.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music2-%E5%88%86%E7%B1%BB%E6%AD%8C%E5%8D%95.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music3-音乐播放.jpg) 
 
-
- ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/music3-音乐播放.jpg) 
  ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/photo1-%E5%88%86%E7%B1%BB.jpg) 
-
  ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%E8%A7%86%E9%A2%911.jpg) ![图片](https://coding.net/u/ecit/p/vue_news/git/raw/898b4a541e6433d131baa5aff72abee62236ed35/UI/%E7%AC%91%E8%AF%9D%E6%AE%B5%E5%AD%90.jpg ) 
 
 

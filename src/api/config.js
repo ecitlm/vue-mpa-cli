@@ -5,10 +5,10 @@
 //接口代理API
 global.apiProxy = 'https://bird.ioliu.cn/v1?url=http://c.m.163.com/nc/';
 
-const Proxy = "http://192.168.1.2:7788/?apiProxy=";//内网api代理
+//const Proxy = "http://192.168.1.2:7788/?apiProxy=";//内网api代理
 
 //外网测试环境 api代理
-//const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
+const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
 
 //定义api 接口
 global.apiurl = {
