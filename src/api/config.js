@@ -6,7 +6,6 @@
 const Proxy = "http://192.168.1.2:7788/?apiProxy=";
 
 
-
 //定义api 接口
 global.apiurl = {
     indexBanner: function () {
@@ -20,6 +19,11 @@ global.apiurl = {
     Article:function (id) {
         var art=Proxy+'http://c.m.163.com/nc/article/' + id + '/full.html';
         return art;
+
+    },
+    video:function () {
+        var v=Proxy+'http://c.3g.163.com/nc/video/home/0-20.html';
+        return v
 
     },
     WxUrl: function (ps) {
