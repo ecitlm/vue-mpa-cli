@@ -6,7 +6,7 @@
 const Proxy = "http://192.168.1.2:7788/?apiProxy=";
 
 //外网测试环境 api代理
-//const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
+
 
 //定义api 接口
 global.apiurl = {
