@@ -34,7 +34,7 @@
         </router-link>
       </div>
 </template>
-<style>
+<style >
 
   #swiper{
     width:100%;
