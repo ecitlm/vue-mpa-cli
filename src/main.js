@@ -10,7 +10,7 @@ import 'animate.css'
 
 import apiConfig from './api/config.js'
 import VueRouter from 'vue-router'
-import routerConfig from './router.config.js'
+import routerConfig from './router/router.config.js'
 Vue.use(VueRouter);
 const router = new VueRouter(routerConfig);
 
