@@ -3,7 +3,7 @@
 小Demo还在不断改进中，也敦促自己不断学习前进
 
 浏览地址：
-[This link](code.it919.cn/dist)
+[Demo Link](http://code.it919.cn/dist)
 
 ![二维码](https://dn-coding-net-production-pp.qbox.me/8175c051-daa0-4148-8842-c235c2a398de.png) 
 
