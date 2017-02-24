@@ -16,6 +16,7 @@ import moviedetial from '../components/MovieDetail.vue'
 import photo from '../components/photo.vue'
 import view from '../components/PhotoView.vue'
 import lyric from '../components/Lyric.vue'
+import zhihu from '../components/Zhihu.vue'
 export default{
     //mode: 'history',
     routes: [
@@ -34,6 +35,7 @@ export default{
         {path: '/photo', component: photo},
         {path: '/view', component: view},
         {path: '/lyric', component: lyric},
+        {path: '/zhihu', component: zhihu},
         {path: '*', redirect: '/home'}
     ]
 }

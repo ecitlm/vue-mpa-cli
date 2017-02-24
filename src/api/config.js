@@ -5,7 +5,7 @@
 // 内网api代理
 const Proxy = "http://192.168.1.2:7788/?apiProxy=";
 
-const bird="https://bird.ioliu.cn/v1/?url=";
+global.bird="https://bird.ioliu.cn/v1/?url=";
 //外网测试环境 api代理
 //const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
 
