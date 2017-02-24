@@ -5,6 +5,7 @@
 // 内网api代理
 const Proxy = "http://192.168.1.2:7788/?apiProxy=";
 
+const bird="https://bird.ioliu.cn/v1/?url=";
 //外网测试环境 api代理
 //const Proxy = "http://120.77.252.160:8081/get.php?apiProxy=";
 
@@ -41,6 +42,10 @@ global.apiurl = {
         var url = Proxy + "http://image.baidu.com/channel/listjson?pn=" + start + "&rn=" + count + "&tag1=%E7%BE%8E%E5%A5%B3";
         return url;
     },
+    ViewP:function (start,count) {
+        var VP=Proxy+"http://gank.io/api/data/%E7%A6%8F%E5%88%A9/"+count+"/"+start;
+        return VP;
+    },
     jokeApi: function (size) {
         var jokeUrl = Proxy + 'http://c.m.163.com/recommend/getChanRecomNews?channel=duanzi&size=' + size;
         return jokeUrl;
@@ -53,6 +58,11 @@ global.apiurl = {
     videoType: function () {
         var vt = Proxy + "http://c.m.163.com/nc/video/topiclist.html";
         return vt;
+    },
+    videList:function () {
+        var v= Proxy+"http://c.m.163.com/nc/video/home/0-20.html";
+        return v;
+
     },
     musicApi: function (id) {
         var m = Proxy + "http://music.163.com/api/song/detail/?id=" + id + "&ids=[" + id + "]";

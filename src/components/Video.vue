@@ -72,7 +72,7 @@
                 });
             },
             get: function () {
-                axios.get(apiProxy + 'video/home/0-20.html').then(function (res) {
+                axios.get(apiurl.videList()).then(function (res) {
                     console.log(res.data.videoList);
                     this.list = res.data.videoList;
                     Indicator.close();

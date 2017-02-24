@@ -1,7 +1,7 @@
 <template>
     <div id="joke_wrap">
         <mt-loadmore :bottom-method="loadBottom" ref="loadmore">
-            <li v-for="item in list">{{ item.digest }}</li>
+            <li v-for="item in list" class="animated fadeInUp">{{ item.digest }}</li>
         </mt-loadmore>
 
     </div>

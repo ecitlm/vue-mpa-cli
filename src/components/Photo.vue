@@ -3,34 +3,45 @@
         <div class="container">
             <div class="waterfall">
 
-                <div class="waterlist list" v-for="(item ,index) in  list" @click="pushUrl(index)">
-                    <img :src="item.share_url">
+                <div class="waterlist list animated fadeInUp " v-for="(item ,index) in  list" @click="showImg(item.url)">
+                    <img  v-lazy.container="item.url">
                 </div>
 
             </div>
-
         </div>
         <span @click="loadMore" id="load" v-show="list.length!=0">加载更多</span>
-
+     <div id="bigbox" @click="hideImg">
+       <mt-popup
+         v-model="popupVisible"
+         popup-transition="popup-fade"
+        >
+         <img :src="boxImg" alt="">
+       </mt-popup>
+     </div>
     </div>
 </template>
 
 <script>
     import  axios from 'axios'
+    import Vue from 'vue'
     import {Indicator} from 'mint-ui'
+    import { Lazyload } from 'mint-ui';
+    Vue.use(Lazyload);
     export default{
         data(){
             return {
                 list: [],
-                start: 0,
-                count: 20
+                popupVisible: false,
+                boxImg:"",
+                start: 1,
+                count: 16
             }
         },
         created(){
             this.getPhoto();
         },
         activated(){
-            this.$emit('title', '精美套图');
+            this.$emit('title', '小清新style');
         },
         methods: {
             loading: function () {
@@ -41,8 +52,8 @@
             },
             getPhoto: function () {
                 this.loading();
-                axios.get(apiurl.photoApi(this.start, this.count)).then(function (res) {
-                    this.list = this.list.concat(res.data.data);
+                axios.get(apiurl.ViewP(this.start, this.count)).then(function (res) {
+                    this.list = this.list.concat(res.data.results);
                     Indicator.close();
                 }.bind(this)).catch(function (error) {
                     console.log(error)
@@ -54,8 +65,16 @@
 
             },
             loadMore: function () {
-                this.start = this.start + this.count + 1;
+                this.start += 1;
+                console.log(this.start)
                 this.getPhoto();
+            },
+            showImg:function (url) {
+              this.boxImg=url;
+              this.popupVisible=true;
+            },
+            hideImg:function () {
+              this.popupVisible=false;
             }
         },
         components: {}
@@ -95,13 +114,31 @@
 
     #load {
         display: block;
-        padding: 10px;
+        padding: 15px 0;
         outline: 0;
-        width: 100px;
+        width: 100%;
         text-align: center;
         z-index: 99;
         margin: 0 auto;
     }
+#bigbox{
+  margin:0 auto;
+  text-align: center;
+  background: #000;
 
+  left:0;
+  top:0;
+}
+    #bigbox   .v-modal{
+      background: #000 !important;
+    }
+#bigbox img{
+  width:100%;
+  max-width: 750px
+}
 
+    #bigbox  img[lazy=loading] {
+        width: 100%;
+        margin: auto;
+    }
 </style>
