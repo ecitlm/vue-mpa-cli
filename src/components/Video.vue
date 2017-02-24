@@ -25,6 +25,8 @@
         padding:3px 15px;
         display: inline-block;
     }
+    .video-item{
+        width:100%;}
 </style>
 <script>
     import axios from  'axios'
