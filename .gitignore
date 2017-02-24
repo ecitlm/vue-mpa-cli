@@ -4,3 +4,5 @@ dist/
 npm-debug.log
 .idea/
 idea/
+start.bat
+push.sh

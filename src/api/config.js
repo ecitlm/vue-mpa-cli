@@ -24,6 +24,11 @@ global.apiurl = {
         return art;
 
     },
+    video:function () {
+        var v=Proxy+'http://c.3g.163.com/nc/video/home/0-20.html';
+        return v
+
+    },
     WxUrl: function (ps) {
         const jkAPikey = "d046cd1f569ed13d951f0258902ef9b2"; //聚合Appkey
         return (Proxy + "http://v.juhe.cn/weixin/query?key=" + jkAPikey + "&ps=" + ps);

@@ -1,21 +1,21 @@
 /**
  * Created by Administrator on 2016/12/24.
  */
-import Home from './components/Home.vue'
-import Video  from './components/Video.vue'
-import Article  from './components/Article.vue'
-import videoplayer  from './components/VideoPlayer.vue'
-import JokeList  from './components/JokeList.vue'
-import musiclist  from './components/MusicList.vue'
-import music  from './components/music.vue'
-import musicplayer  from './components/MusicPlayer.vue'
-import wxlist  from './components/WxList.vue'
-import wxarticle  from './components/WxArticle.vue'
-import movie  from './components/movie.vue'
-import moviedetial from './components/MovieDetail.vue'
-import photo from './components/photo.vue'
-import view from './components/PhotoView.vue'
-import lyric from './components/Lyric.vue'
+import Home from '../components/Home.vue'
+import Video  from '../components/Video.vue'
+import Article  from '../components/Article.vue'
+import videoplayer  from '../components/VideoPlayer.vue'
+import JokeList  from '../components/JokeList.vue'
+import musiclist  from '../components/MusicList.vue'
+import music  from '../components/music.vue'
+import musicplayer  from '../components/MusicPlayer.vue'
+import wxlist  from '../components/WxList.vue'
+import wxarticle  from '../components/WxArticle.vue'
+import movie  from '../components/movie.vue'
+import moviedetial from '../components/MovieDetail.vue'
+import photo from '../components/photo.vue'
+import view from '../components/PhotoView.vue'
+import lyric from '../components/Lyric.vue'
 export default{
     //mode: 'history',
     routes: [

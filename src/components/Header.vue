@@ -2,7 +2,7 @@
 
     <div class="headerbar">
         <div id="header">
-            <mt-header :title="title" style="background: #f33;height: 50px;font-size: 16px;">
+            <mt-header :title="title" style="background: #f33;height: 50px;font-size: 16px;max-width:750px">
                 <a slot="left" href="javascript:window.history.go(-1)">
                     <mt-button icon="back" ></mt-button>
                 </a>
@@ -95,19 +95,26 @@
         position: relative;
         height: 50px;
         z-index: 999;
+        max-width: 750px;
+        margin: 0 auto;
     }
 
     #header {
         margin: 0;
         padding: 0;
         position: fixed;
-        left: 0;
         width: 100%;
         z-index: 2;
         clear: both;
         height: 50px;
+        margin:0 auto;
     }
 
+    #title-list{
+        max-width: 750px;
+        margin: 0 auto;
+        width:100%;
+    }
     #title-list li a {
         color: #666;
         font-size:14px;

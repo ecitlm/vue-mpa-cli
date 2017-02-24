@@ -2,8 +2,13 @@
 项目基于Vue2+axios+VueRouter的一个小应用,热点新闻展示、歌曲排行展示播放、热播电影详情查看、微信精选、百度美图、搞笑段子,
 小Demo还在不断改进中，也敦促自己不断学习前进
 
+浏览地址：
+[Demo Link](http://code.it919.cn/dist)
 
-###Build Setup
+![二维码](https://dn-coding-net-production-pp.qbox.me/8175c051-daa0-4148-8842-c235c2a398de.png) 
+
+
+### Build Setup
 ```
 # install dependencies
 npm install
