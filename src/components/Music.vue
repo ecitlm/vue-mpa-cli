@@ -2,7 +2,7 @@
     <div>
         <!--{{list.creator.avatarUrl}}-->
         <div id="music-head">
-            <div class="head-bg" :style="{backgroundImage: 'url(' + list.creator.avatarUrl +'?param=12y22&quality=75'+ ')'}"></div>
+            <div class="head-bg" :style="{backgroundImage: 'url(' + list.creator.avatarUrl +'?param=12y22&quality=100'+ ')'}"></div>
 
 
             <div class="song-pic">

@@ -4,7 +4,7 @@
         <div id="header">
             <mt-header :title="title" style="background: #f33;height: 50px;font-size: 16px;max-width:750px">
                 <a slot="left" href="javascript:window.history.go(-1)">
-                    <mt-button icon="back" ></mt-button>
+                    <mt-button icon="back"></mt-button>
                 </a>
                 <mt-button icon="more" slot="right" @click.native="show"></mt-button>
             </mt-header>
@@ -61,6 +61,12 @@
                 </li>
 
                 <li data="T1348648517839">
+                    <router-link to="/sport" slot="">
+                        <i class="iconfont icon-sport"></i>
+                        体育
+                    </router-link>
+                </li>
+                <li data="T1348648517839">
                     <router-link to="#" slot="">
                         <i class="iconfont icon-edu"></i>
                         教育
@@ -69,15 +75,8 @@
 
                 <li data="T1348648517839">
                     <router-link to="#" slot="">
-                        <i class="iconfont icon-sport"></i>
-                        体育
-                    </router-link>
-                </li>
-
-                <li data="T1348648517839">
-                    <router-link to="#" slot="">
                         <i class="iconfont icon-code"></i>
-                       IT科技
+                        IT科技
                     </router-link>
                 </li>
 
@@ -107,25 +106,27 @@
         z-index: 2;
         clear: both;
         height: 50px;
-        margin:0 auto;
+        margin: 0 auto;
     }
 
-    #title-list{
+    #title-list {
         max-width: 750px;
         margin: 0 auto;
-        width:100%;
+        width: 100%;
     }
+
     #title-list li a {
         color: #666;
-        font-size:14px;
+        font-size: 14px;
     }
 
     #title-list li a.router-link-active {
         color: red;
     }
-    #title-list li i{
+
+    #title-list li i {
         display: block;
-        font-size:30px;
+        font-size: 30px;
     }
 </style>
 <script>
@@ -148,7 +149,7 @@
             fatched: function () {
                 this.popupVisible = false;
             },
-            tip:function () {
+            tip: function () {
                 alert("后面再完善上去")
 
             }

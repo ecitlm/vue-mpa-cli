@@ -28,6 +28,7 @@
         methods:{
             change(title) {
                 this.title = title;
+
             }
 
         }
