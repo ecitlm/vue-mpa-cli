@@ -4,6 +4,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter);
+import store from '../store/index'
 import Home from '../components/Home.vue'
 import Video  from '../components/Video.vue'
 import Article  from '../components/Article.vue'
@@ -21,6 +22,7 @@ import view from '../components/PhotoView.vue'
 import lyric from '../components/Lyric.vue'
 import zhihu from '../components/Zhihu.vue'
 import sport from '../components/Sport.vue'
+import  login  from '../components/User/Login.vue'
 
 
 const routes = [
@@ -41,6 +43,12 @@ const routes = [
     {path: '/lyric', component: lyric},
     {path: '/zhihu', component: zhihu},
     {path: '/sport', component: sport},
+    {
+        path: '/login',
+        meta: {
+        requireAuth: false,
+        },
+        component: login},
     {path: '*', redirect: '/sport'}
 ]
 
@@ -50,10 +58,20 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    next();
+    if (store.state.data.token) {
+        next();
+    }else {
+        next();
+       /* alert("你没有登录啦")
+        if (to.meta.requireAuth==false) {
+            next();
+        }else {
+            next({ path: '/login' })
+
+        }*/
+
+    }
 })
 
 export default router;
-
-
 

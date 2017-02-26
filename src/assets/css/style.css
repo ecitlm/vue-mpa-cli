@@ -1,383 +1,407 @@
 * {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-  list-style: none;
-  -webkit-tap-highlight-color:transparent;
-  font-style: normal;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    -webkit-tap-highlight-color: transparent;
+    font-style: normal;
 
 }
 
 body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
-  max-width:750px;margin: 0 auto;
-  position: relative;
+    margin: 0;
+    padding: 0;
+    font-family: 'STHeiti', 'Microsoft YaHei', Helvetica, Arial, sans-serif;
+    max-width: 750px;
+    margin: 0 auto;
+    min-height: 100%;
+    height: 100%;
+    position: relative;
 }
-.fr{
-  float: right;}
-.fl{
-  float: left;}
-#app{
-  position: relative;
-  width:100%;
+#app {
+    position: relative;
+    width: 100%;
+    height:100%;
 }
+
+.fr {
+    float: right;
+}
+
+.fl {
+    float: left;
+}
+
+
+
 .clearfix {
-  clear: both
+    clear: both
 }
 
 #content-list section {
-  background: #f6f6f6;
-  width: 100%;
-  height: auto;
-  overflow: hidden;
+    background: #f6f6f6;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
 }
 
 .m_article {
-  padding: 10px;
-  border-bottom: 1px solid #e5e5e5;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .m_article .m_article_img {
-  float: left;
-  width: 27%;
+    float: left;
+    width: 27%;
 
-  overflow: hidden;
-  position: relative;
-  margin-right: 8px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 8px;
 }
 
 .m_article_img img {
-  width: 100%;
+    width: 100%;
 }
 
 .m_article .m_article_info {
-  overflow: hidden;
-  padding-bottom: 4px;
+    overflow: hidden;
+    padding-bottom: 4px;
 }
 
 .m_article .m_article_info .m_article_title {
-  font-size: 16px;
-  margin-bottom: .2rem;
-  color: #404040;
-  line-height: 24px;
-  width: 100%;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  -webkit-line-break: auto;
-  -webkit-box-orient: vertical
+    font-size: 16px;
+    margin-bottom: .2rem;
+    color: #404040;
+    line-height: 24px;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    -webkit-line-break: auto;
+    -webkit-box-orient: vertical
 }
 
 .m_article .m_article_desc .m_article_channel {
-  display: inline-block;
-  color: #f33;
-  font-size: 12px;
-  padding: 2px;
-  line-height: 12px;
-  margin-right: .1rem;
-  background: url(http://img2.cache.netease.com/f2e/wap/common/images/border_red.png) no-repeat;
-  background-size: 100% 100%
+    display: inline-block;
+    color: #f33;
+    font-size: 12px;
+    padding: 2px;
+    line-height: 12px;
+    margin-right: .1rem;
+    background: url(http://img2.cache.netease.com/f2e/wap/common/images/border_red.png) no-repeat;
+    background-size: 100% 100%
 }
 
 .m_article .m_article_desc .m_article_time {
-  color: #888;
-  display: inline-block;
-  font-size: 14px;
-  float: right;
+    color: #888;
+    display: inline-block;
+    font-size: 14px;
+    float: right;
 }
 
 .m_article .m_article_desc .m_article_desc_l {
-  float: left;
-  width: 100%;
+    float: left;
+    width: 100%;
 }
 
 .m_article .m_article_desc .m_article_desc_r {
-  float: right;
-  background-size: contain;
+    float: right;
+    background-size: contain;
 
-  color: #888;
-  font-size: 12px;
+    color: #888;
+    font-size: 12px;
 }
 
 .video {
-  width: 100%;
-  float: left;
-  height: auto;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 15px;
-  background: #f6f6f6;
+    width: 100%;
+    float: left;
+    height: auto;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+    background: #f6f6f6;
 }
 
 .video-item {
-  position: relative;
-  float: left;
-  margin-bottom: 10px;
+    position: relative;
+    float: left;
+    margin-bottom: 10px;
 }
 
 .v-poster {
-  width: 100%;
+    width: 100%;
 }
 
 .v-poster img {
-  width: 100%;
-  background-color: #e5e5e5;
-  background: url(http://img2.cache.netease.com/f2e/wap/common/images/bg_img_sm.png) center center no-repeat;
-  background-size: contain;
+    width: 100%;
+    background-color: #e5e5e5;
+    background: url(http://img2.cache.netease.com/f2e/wap/common/images/bg_img_sm.png) center center no-repeat;
+    background-size: contain;
 }
 
 .v-mask {
-  position: absolute;
-  width: 100%;
-  min-height: 100px;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  height: auto;
-  overflow: hidden;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 10px;
+    position: absolute;
+    width: 100%;
+    min-height: 100px;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    height: auto;
+    overflow: hidden;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
 }
 
 .v-head {
-  width: 100%;
-  bottom: 10px;
-  left: 0;
-  line-height: 24px;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+    line-height: 24px;
 }
 
 .v-play {
-  width: 40px;
-  height: 23px;
-  background: #f33;
-  opacity: .8;
-  border-radius: 5px;
-  position: relative;
-  display: inline-block;
-  z-index: 3;
-  background: url(http://img2.cache.netease.com/f2e/wap/touch_index_2016/trunk/images/play_btn.png) center center no-repeat;
-  background-size: contain;
+    width: 40px;
+    height: 23px;
+    background: #f33;
+    opacity: .8;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    z-index: 3;
+    background: url(http://img2.cache.netease.com/f2e/wap/touch_index_2016/trunk/images/play_btn.png) center center no-repeat;
+    background-size: contain;
 }
 
 .v-title {
-  text-align: left;
-  position: absolute;
-  color: #fff;
-  height: auto;
-  overflow: hidden;
-  bottom: 10px;
+    text-align: left;
+    position: absolute;
+    color: #fff;
+    height: auto;
+    overflow: hidden;
+    bottom: 10px;
 
 }
 
 /*music*/
 #music-head {
-  width: 100%;
-  min-height: 100px;
-  max-height:230px;
-  height: auto;
-  overflow: hidden;
-  box-sizing: border-box;
-  background-size: 100% auto;
-  padding: 15px 10px;
-  float: left;
-  position: relative;
+    width: 100%;
+    min-height: 100px;
+    max-height: 230px;
+    height: auto;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-size: 100% auto;
+    padding: 15px 10px;
+    float: left;
+    position: relative;
 
 }
-.head-bg{
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  max-height:230px;
-  min-height: 150px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  background-position: center center;
-  transition: opacity 0.3s;
-  transform: scale(1.5);
-  transform-origin: center top;
-  clear: both;
-  z-index: -10;
+
+.head-bg {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    max-height: 230px;
+    min-height: 150px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-position: center center;
+    transition: opacity 0.3s;
+    transform: scale(1.5);
+    transform-origin: center top;
+    clear: both;
+    z-index: -10;
 }
+
 .song-pic .tag {
-  position: absolute;
-  z-index: 3;
-  top: 10px;
-  left: 0px;
-  width: 34px;
-  height: 17px;
-  color: #fff;
-  font-size: 9px;
-  text-align: center;
-  line-height: 17px;
-  background-color: rgba(217, 48, 48, .8);
-  border-radius: 0 9999px 9999px 0;
+    position: absolute;
+    z-index: 3;
+    top: 10px;
+    left: 0px;
+    width: 34px;
+    height: 17px;
+    color: #fff;
+    font-size: 9px;
+    text-align: center;
+    line-height: 17px;
+    background-color: rgba(217, 48, 48, .8);
+    border-radius: 0 9999px 9999px 0;
 }
 
 .song-pic {
-  float: left;
-  width: 35%;
-  position: relative;
-  max-width: 200px;
+    float: left;
+    width: 35%;
+    position: relative;
+    max-width: 200px;
 }
 
 .song-pic img {
-  width: 100%;
+    width: 100%;
 }
 
 .song-pic .count {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  padding-right: 5px;
-  height: 18px;
-  line-height: 18px;
-  color: #fff;
-  font-size: 12px;
-  text-align: right;
-  /* background-image: url('http://music.163.com/style/mobile/img/share/share_icn_headset@2x.png');
-   background-size: 13px auto;
-   background-position: 1px right;
-   background-repeat: no-repeat;*/
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 5px;
+    height: 18px;
+    line-height: 18px;
+    color: #fff;
+    font-size: 12px;
+    text-align: right;
+    /* background-image: url('http://music.163.com/style/mobile/img/share/share_icn_headset@2x.png');
+     background-size: 13px auto;
+     background-position: 1px right;
+     background-repeat: no-repeat;*/
 }
 
 .cnt {
-  margin-left: 15px;
-  float: left;
-  width: 60%;
+    margin-left: 15px;
+    float: left;
+    width: 60%;
 }
 
 .j-plname {
-  padding-top: 10px;
-  font-size: 17px;
-  line-height: 1.3;
-  color: #fefefe;
-  word-break: break-all;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+    padding-top: 10px;
+    font-size: 17px;
+    line-height: 1.3;
+    color: #fefefe;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 
 }
 
 .cnt .art {
-  position: relative;
-  margin-top: 10px;
-  font-size: 14px;
-  color: #888;
+    position: relative;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
 }
 
 .cnt .art .ava {
-  width: 30px;
-  height: 30px;
-  border-radius: 9999px;
-  vertical-align: middle;
-  margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 9999px;
+    vertical-align: middle;
+    margin-right: 5px;
 }
-.m-title{
-  max-height:40px;
-  line-height:20px;
-  display: block;
-  padding:3px 0;
-  overflow: hidden;
+
+.m-title {
+    max-height: 40px;
+    line-height: 20px;
+    display: block;
+    padding: 3px 0;
+    overflow: hidden;
 }
+
 .m-bill {
-  width: 100%;
-  float: left;
+    width: 100%;
+    float: left;
 }
 
 .u-hd {
-  height: 23px;
-  padding: 0 10px;
-  background: #ebebeb;
-  line-height: 23px;
-  font-size: 12px;
-  color: #666;
-  position: relative
+    height: 23px;
+    padding: 0 10px;
+    background: #ebebeb;
+    line-height: 23px;
+    font-size: 12px;
+    color: #666;
+    position: relative
 }
-.m-bill .list li{
-  height: 55px;
-  width:100%;
-  line-height: 1.4;
-  background-color: #f8f8f8;
-  position: relative;
-  float: left;
+
+.m-bill .list li {
+    height: 55px;
+    width: 100%;
+    line-height: 1.4;
+    background-color: #f8f8f8;
+    position: relative;
+    float: left;
 
 }
+
 .m-bill .list a {
-  position: relative;
-  display: block;
-  height: 100%;
+    position: relative;
+    display: block;
+    height: 100%;
 }
-.m-bill .list li .num{
-  float: left;
-  width: 36px;
-  line-height: 55px;
-  text-align: center;
-  font-size: 17px;
-  color: #999;
+
+.m-bill .list li .num {
+    float: left;
+    width: 36px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 17px;
+    color: #999;
 }
-.m-bill .list li .detail{
-  display: block;
-  height: 100%;
-  margin-left: 36px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+
+.m-bill .list li .detail {
+    display: block;
+    height: 100%;
+    margin-left: 36px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 
 }
-.m-bill .list li h3{
-  padding: 8px 40px 0 0;
-  font-size: 16px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  font-weight:normal;
+
+.m-bill .list li h3 {
+    padding: 8px 40px 0 0;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: normal;
 }
-.s-fc1{
-  color: #333;}
-.m-bill li p{
-  padding-right: 40px;
-  font-size:12px;
-  color: #888;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+.s-fc1 {
+    color: #333;
 }
-.f-bd .play{
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  right: 10px;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  background-image: url('http://music.163.com/style/mobile/img/share/share_icon_play@2x.png');
-  background-repeat: no-repeat;
-  background-size: 20px;
-  background-position: center;
+
+.m-bill li p {
+    padding-right: 40px;
+    font-size: 12px;
+    color: #888;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.f-bd .play {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 10px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    background-image: url('http://music.163.com/style/mobile/img/share/share_icon_play@2x.png');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: center;
 }
 
 /*lyric*/
 #lyric {
-    width:100%;
+    width: 100%;
     height: 150px;
     overflow: hidden;
     color: #fff;
@@ -386,14 +410,14 @@ body, html {
     position: relative;
     text-align: center;
     box-sizing: border-box;
-    padding:20px 0;
+    padding: 20px 0;
     float: left;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
 #lyric ul {
     position: absolute;
-    width:100%;
+    width: 100%;
 }
 
 #lyric ul li {
@@ -402,7 +426,8 @@ body, html {
     line-height: 25px;
     color: #333;
 }
-#lyric ul li.current{
-    color:  #cb5d5d;
-    background: rgba(151,151,145,0.7);
+
+#lyric ul li.current {
+    color: #cb5d5d;
+    background: rgba(151, 151, 145, 0.7);
 }

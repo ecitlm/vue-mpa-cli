@@ -6,6 +6,7 @@ import axios from 'axios'
 import * as types from '../mutation-types.js'
 
 const API = "https://bird.ioliu.cn/v1/?url=";
+const PROXY = "http://localhost:301/index.php/API";
 
 const state = {
     BannerListRoot: [],
@@ -14,6 +15,8 @@ const state = {
     SportList: {},
     UserName: 'ecitlm',
     Email: 'ecitlm@163.com',
+    LoginInfo:{},
+    token:""
 }
 
 
@@ -29,6 +32,9 @@ const getters = {
     },
     [types.DONE_SPORT_LIST]: state => {
         return state.SportList
+    },
+    [types.DONE_Login]: state => {
+        return state.token
     }
 }
 
@@ -42,6 +48,12 @@ const mutations = {
     },
     [types.TOGGLE_SPORT_LIST](state, all) {
         state.SportList = all
+    },
+    [types.TOGGLE_Login](state, all) {
+        if(all.code==200){
+            state.token=all.data[0].token
+        }
+        state.LoginInfo=all;
     }
 }
 
@@ -68,6 +80,26 @@ const actions = {
                 console.log(res.data)
                 commit(types.TOGGLE_SPORT_LIST, res.data.T1348649145984)
             }).catch(err => console.log(err))
+    },
+    // 登录
+    [types.FECTH_Login]({commit},info) {
+        axios.get(PROXY+'/Login/login', {
+            params: {
+                username:info.username,
+                password:info.password
+            }
+
+        })
+            .then(function (res) {
+                console.log(res.data);
+                if(res.data.code=200){
+                    console.log(res.data.message);
+                    commit(types.TOGGLE_Login, res.data);
+                }
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     }
 }
 
