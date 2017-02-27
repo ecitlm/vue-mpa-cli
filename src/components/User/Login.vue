@@ -19,11 +19,14 @@
             return {
                 info: {
                     username: "15079111716",
-                    password: "123456"
+                    password: "admin123"
                 }
             }
         },
         created(){
+            this.$emit('title', '用户登录');
+        },
+        activated(){
             this.$emit('title', '用户登录');
         },
         computed: {
@@ -34,13 +37,13 @@
         },
         methods: {
             Login: function () {
-                // console.log(JSON.stringify(this.LoginInfo))
+                // console.log(JSON.stringify(this.LoginInfo));
                 if (this.token) {
                     alert("已经登录了");
                     this.$router.push({path: '/home'})
                 } else {
                     this.$store.dispatch('FECTH_Login', this.info);
-                    console.log(JSON.stringify(this.LoginInfo))
+                    //console.log(JSON.stringify(this.LoginInfo))
                 }
             }
         },
@@ -75,6 +78,7 @@
         height: 40px;
         outline: none;
         background: transparent;
+        -webkit-appearance: none;
         border: 1px solid #DDD;
         border-radius: 8px;
         box-sizing: border-box;

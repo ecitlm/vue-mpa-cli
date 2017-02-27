@@ -48,8 +48,9 @@ const routes = [
         meta: {
         requireAuth: false,
         },
-        component: login},
-    {path: '*', redirect: '/sport'}
+        component: login
+    },
+    {path: '*', redirect: '/home'}
 ]
 
 const router = new VueRouter({
@@ -62,12 +63,11 @@ router.beforeEach((to, from, next) => {
         next();
     }else {
         next();
-       /* alert("你没有登录啦")
+       /* console.log("你还没有登录啦")
         if (to.meta.requireAuth==false) {
             next();
         }else {
             next({ path: '/login' })
-
         }*/
 
     }

@@ -15,8 +15,8 @@ const state = {
     SportList: {},
     UserName: 'ecitlm',
     Email: 'ecitlm@163.com',
-    LoginInfo:{},
-    token:""
+    LoginInfo: {},
+    token: ""
 }
 
 
@@ -50,10 +50,10 @@ const mutations = {
         state.SportList = all
     },
     [types.TOGGLE_Login](state, all) {
-        if(all.code==200){
-            state.token=all.data[0].token
+        if (all.message == "登陆成功") {
+            state.token = all.data[0].token
         }
-        state.LoginInfo=all;
+        state.LoginInfo = all;
     }
 }
 
@@ -82,27 +82,26 @@ const actions = {
             }).catch(err => console.log(err))
     },
     // 登录
-    [types.FECTH_Login]({commit},info) {
-        axios.get(PROXY+'/Login/login', {
-            params: {
-                username:info.username,
-                password:info.password
-            }
+    [types.FECTH_Login]({commit}, info) {
+        var params = new URLSearchParams();
+        params.append('username', info.username);
+        params.append('password', info.password);
+        axios.post(PROXY + '/Login/login', params)
 
-        })
             .then(function (res) {
-                console.log(res.data);
-                if(res.data.code=200){
-                    console.log(res.data.message);
+                if (res.data.code = 200) {
+                    console.log(res.data);
+                    commit(types.TOGGLE_Login, res.data);
+                } else {
                     commit(types.TOGGLE_Login, res.data);
                 }
             })
             .catch(function (error) {
                 console.log(error);
+                alert(error)
             });
     }
 }
-
 
 export default {
     state,
