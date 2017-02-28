@@ -50,7 +50,7 @@ const routes = [
         },
         component: login
     },
-    {path: '*', redirect: '/home'}
+    {path: '*', redirect: '/login'}
 ]
 
 const router = new VueRouter({

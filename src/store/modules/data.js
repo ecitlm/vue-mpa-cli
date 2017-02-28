@@ -50,8 +50,9 @@ const mutations = {
         state.SportList = all
     },
     [types.TOGGLE_Login](state, all) {
-        if (all.message == "登陆成功") {
-            state.token = all.data[0].token
+        if (all.code == 1) {
+            state.token = all.data.token;
+            //localStorage.setItem("token",all.data.token)
         }
         state.LoginInfo = all;
     }
@@ -86,15 +87,11 @@ const actions = {
         var params = new URLSearchParams();
         params.append('username', info.username);
         params.append('password', info.password);
-        axios.post(PROXY + '/Login/login', params)
 
+        axios.post("http://h5.it919.cn/index.php/?c=api&a=index", params)
             .then(function (res) {
-                if (res.data.code = 200) {
-                    console.log(res.data);
-                    commit(types.TOGGLE_Login, res.data);
-                } else {
-                    commit(types.TOGGLE_Login, res.data);
-                }
+                console.log(res.data.msg)
+                commit(types.TOGGLE_Login, res.data);
             })
             .catch(function (error) {
                 console.log(error);
