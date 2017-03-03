@@ -5,7 +5,7 @@
             <li><input type="password" v-model="info.password" placeholder="password"></li>
         </ul>
 
-        <p class="msg"> {{LoginInfo.message}}</p>
+        <p class="msg"> {{LoginInfo.msg}}</p>
         <div id="login_btn">
             <mt-button plain type="danger" size="large" @click.native="Login">登录</mt-button>
         </div>
@@ -19,7 +19,7 @@
             return {
                 info: {
                     username: "15079111716",
-                    password: "admin123"
+                    password: "123456"
                 }
             }
         },
@@ -37,14 +37,20 @@
         },
         methods: {
             Login: function () {
-                // console.log(JSON.stringify(this.LoginInfo));
-                if (this.token) {
+                console.log(JSON.stringify(this.token))
+                if (this.token || localStorage.getItem("token")) {
                     alert("已经登录了");
                     this.$router.push({path: '/home'})
                 } else {
                     this.$store.dispatch('FECTH_Login', this.info);
-                    //console.log(JSON.stringify(this.LoginInfo))
+                    //console.log(JSON.stringify(this.LoginInfo));
                 }
+            },
+            isLogin:function () {
+                if (this.token || localStorage.getItem("token")) {
+
+                }
+
             }
         },
         components: {}
