@@ -18,6 +18,10 @@ Vue.filter("minutes", function (value) {
     return (Math.floor(value / 60) + ":" + Math.floor(value % 60));
 });
 
+Vue.filter('time', function (value) {
+    return new Date(parseInt(value)).toLocaleString().replace(/年|月/g, "-").replace(/日/g, " ");
+})
+
 new Vue({
     router,
     api,

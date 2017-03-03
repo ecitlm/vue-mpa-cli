@@ -20,7 +20,7 @@ import moviedetial from '../components/MovieDetail.vue'
 import photo from '../components/photo.vue'
 import view from '../components/PhotoView.vue'
 import lyric from '../components/Lyric.vue'
-import zhihu from '../components/Zhihu.vue'
+import coding from '../components/Coding.vue'
 import sport from '../components/Sport.vue'
 import  login  from '../components/User/Login.vue'
 
@@ -41,7 +41,7 @@ const routes = [
     {path: '/photo', component: photo},
     {path: '/view', component: view},
     {path: '/lyric', component: lyric},
-    {path: '/zhihu', component: zhihu},
+    {path: '/coding', component: coding},
     {path: '/sport', component: sport},
     {
         path: '/login',
