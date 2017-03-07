@@ -64,7 +64,7 @@ const actions = {
         axios.get(API + 'http://c.m.163.com/nc/article/headline/list/0-5.html?from=toutiao&passport=&devId')
             .then(res => {
                 console.log(res.data);
-                commit(types.TOGGLE_INDEX_BANNER, res.data.list[0].ads)
+                commit(types.TOGGLE_INDEX_BANNER, res.data.list)
             }).catch(err => console.log(err))
     },
     // 获取首页新闻列表
