@@ -109,7 +109,7 @@
       activated(){
             this.$emit('title', '音乐播放');
             this.get();
-        
+
       },
         methods: {
             loading:function () {
@@ -122,7 +122,7 @@
                 this.loading();
                 var id=this.$route.query.id;
                 axios.get(apiurl.MusicType(id)).then(function (res) {
-                    this.list = res.data.data.result;
+                    this.list = res.data.result;
                     Indicator.close();
 
                 }.bind(this)).catch(function (error) {

@@ -42,7 +42,8 @@ global.apiurl = {
 
     },
     MusicType: function (id) {
-        return ("https://bird.ioliu.cn/netease?playlist_id=" + id);
+      var url=Proxy+'http://music.163.com/api/playlist/detail?id='+id;
+      return url;
     },
     photoApi: function (start, count) {
         var url = Proxy + "http://image.baidu.com/channel/listjson?pn=" + start + "&rn=" + count + "&tag1=%E7%BE%8E%E5%A5%B3";
