@@ -67,7 +67,7 @@
     components: {}
   }
 </script>
-<style>
+<style scoped>
   .m-type {
     width: 100%;
     box-sizing: border-box;

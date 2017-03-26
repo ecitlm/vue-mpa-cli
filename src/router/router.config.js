@@ -21,7 +21,9 @@ import photo from '../components/photo.vue'
 import view from '../components/PhotoView.vue'
 import lyric from '../components/Lyric.vue'
 import coding from '../components/Coding.vue'
+import zhihu from '../components/Zhihu.vue'
 import sport from '../components/Sport.vue'
+import  zhihuarticle  from '../components/zhihuArticle.vue'
 import  login  from '../components/User/Login.vue'
 
 
@@ -43,6 +45,8 @@ const routes = [
     {path: '/lyric', component: lyric},
     {path: '/coding', component: coding},
     {path: '/sport', component: sport},
+    {path: '/zhihu', component: zhihu},
+    {path: '/zhihuarticle', component: zhihuarticle},
     {
         path: '/login',
         meta: {

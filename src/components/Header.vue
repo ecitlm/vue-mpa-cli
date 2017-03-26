@@ -74,7 +74,7 @@
                 </li>
 
                 <li data="T1348648517839">
-                    <router-link to="#" slot="">
+                    <router-link to="/zhihu" slot="">
                         <i class="iconfont icon-code"></i>
                         IT科技
                     </router-link>

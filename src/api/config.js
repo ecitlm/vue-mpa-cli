@@ -82,5 +82,13 @@ global.apiurl = {
     },
     zhihu: function () {
         var zh = Proxy + "https://zhuanlan.zhihu.com/api/columns/wxyyxc1992";
-    }
+    },
+  zhihuDaily: function (day) {
+    var zh = Proxy + "http://news.at.zhihu.com/api/4/news/before/"+day;
+    return zh;
+  },
+  zhihuDetail:function (id) {
+    var zh = Proxy + "http://news-at.zhihu.com/api/4/news/"+id;
+    return zh;
+  }
 }
