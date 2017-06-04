@@ -192,17 +192,18 @@ body, html {
 /*music*/
 #music-head {
     width: 100%;
-    min-height: 100px;
-    max-height: 230px;
+    min-height: 150px;
+    max-height: 280px;
     height: auto;
     overflow: hidden;
     box-sizing: border-box;
     background-size: 100% auto;
-    padding: 15px 10px;
+    
     float: left;
     position: relative;
-
 }
+#music-head img{height: 100%;width: 100%;min-height:150px}
+
 
 .head-bg {
     background-size: cover;

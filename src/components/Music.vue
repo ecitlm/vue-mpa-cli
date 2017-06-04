@@ -2,42 +2,22 @@
     <div>
         <!--{{list.creator.avatarUrl}}-->
         <div id="music-head">
-            <div class="head-bg" :style="{backgroundImage: 'url(' + list.creator.avatarUrl +'?param=12y22&quality=100'+ ')'}"></div>
-
-
-            <div class="song-pic">
-                <img :src="list.coverImgUrl+'?param=252y252&amp;quality=75'">
-                <span class="tag">歌单</span>
-                <p class="count">{{list.trackCount}}</p>
-            </div>
-            <div class="cnt">
-                <h2 class="j-plname"></h2>
-                <div class="art s-fc3 f-thide">
-                   <p class="m-title"> {{list.name}}</p>
-                    <img :src="list.creator.avatarUrl" class="ava j-lazy z-loaded">
-                    {{list.creator.nickname}}
-                </div>
-            </div>
+            <img :src="replaceImg(info.bannerurl)" >
 
         </div>
 
-        <section class="m-intr">
-            <p class="s-fc3 tags">标签：
-                <em class="tag" v-for="tag in list.tags">{{tag}}</em>
-            </p>
-            <p class="desc s-fc3 f-brk nomore" id="briefDescBox">简介：{{list.description}}</p>
-        </section>
+
         <section class="m-bill">
             <h2 class="f-bd u-hd">歌曲列表</h2>
             <ul class="list">
                 <!--<router-link tag="section" class="video-item" :to="{ path: '/player', query: { id: item.mp4_url}}"-->
-                <router-link tag="li" class="f-bd" :to="{ path: '/musicplayer', query: { id: item.id}}" v-for="(item,index) in list.tracks">
-                    <a :href="{ path: '/musicplayer', query: { id: item.id}}" data-action="res" data-res-type="song"
+                <router-link tag="li" class="f-bd" :to="{ path: '/musicplayer', query: { id: item.hash}}" v-for="(item,index) in list">
+                    <a :href="{ path: '/musicplayer', query: { id: item.hash}}" data-action="res" data-res-type="song"
                        data-log="hitsong">
                         <span class="num s-fc4">{{index+1}}</span>
                         <span class="detail">
-                <h3 class="s-fc1">{{item.name}}{{item.alias[0]}}</h3>
-                <p class="s-fc8">{{item.artists[0].name}}-{{item.album.name}}</p>
+                <h3 class="s-fc1">{{item.filename}}</h3>
+                <!--<p class="s-fc8">{{item.artists[0].name}}-{{item.album.name}}</p>-->
             </span>
                         <span href="#" class="play"></span>
                     </a>
@@ -90,16 +70,12 @@
     export default{
         data(){
             return {
-                list: {
-                  creator: {
-                    "avatarUrl": "http://p1.music.126.net/UUVBZwisn4EjaUsaeITqpw==/109951162823117909.jpg",
-                    "nickname": "IT",
-                    "signature": "珍惜朋友，爱自己",
-                    "description": "",
-                    "detailDescription": "",
-                    "backgroundUrl": "http://p1.music.126.net/00ElqS54w-4uW-trWwNPLw==/109951162790078220.jpg"
-                  }
-                }
+                list:[],
+                info:{
+                    bannerurl:"http://icon.kugou.com//mcommonbanner/200/20150331/20150331161102692497.jpg"
+                },
+                size:400
+
             }
         },
         created(){
@@ -112,6 +88,11 @@
 
       },
         methods: {
+            replaceImg:function (param) { 
+                var img=param.replace('{size}',400);
+                return img
+
+             },
             loading:function () {
               Indicator.open({
                 text: '加载中...',
@@ -121,8 +102,11 @@
             get: function () {
                 this.loading();
                 var id=this.$route.query.id;
-                axios.get(apiurl.MusicType(id)).then(function (res) {
-                    this.list = res.data.result;
+                var url="http://m.kugou.com/rank/info/?rankid="+id+"&page=1&json=true"
+                axios.get(bird+url).then(function (res) {
+                    console.log(res.data);
+                    this.list=res.data.songs.list;
+                    this.info=res.data.info
                     Indicator.close();
 
                 }.bind(this)).catch(function (error) {

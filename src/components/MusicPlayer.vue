@@ -1,6 +1,5 @@
 <template>
     <div id="m-box">
-
         <div id="m-bg" :style="{backgroundImage: 'url(' + music.pic + ')'}">
           <!--  {{lyric.lyric}}-->
            <!-- {{newLyric}}-->
@@ -17,17 +16,16 @@
                 </li>
             </ul>
 
-        </div>
-
+        </div> 
 
         <div id="audio-play">
             <div class="progressbar">
-                <div id="current_line" :style="{ width:  currentTime*1000*100/playTime + '%' }"></div>
+                <div id="current_line" :style="{ width:  currentTime*100/playTime + '%' }"></div>
             </div>
             <audio id="audio" :src="music.url"></audio>
            <!-- <audio id="audio" src="http://code.it919.cn/gbqq.mp3"></audio>-->
-            <p><i class="fl">{{ currentTime | minutes}}</i><i class="fr">{{playTime/1000 | minutes}}</i></p>
-            <h3 class="song-title">{{music.title}}-{{music.author}}</h3>
+            <p><i class="fl">{{ currentTime | minutes}}</i><i class="fr">{{playTime | minutes}}</i></p>
+            <h3 class="song-title">{{music.title}}</h3>
 
             <ul class="song-btn">
                 <button class="iconfont icon-prev"></button>
@@ -59,25 +57,25 @@
                 top: 200,
                 list: {},
                 music: {
-                    title: '',
-                    author: '',
-                    url: 'http://m2.music.126.net/ngNzMkhKrUTvYdxM8LjADQ==/1052232627789700.mp3',
-                    pic: 'http://p4.music.126.net/ZyKyS8L5jbZh1w-fgstOCg==/41781441869354.jpg',
+                    title: '~~',
+                    author: '~~',
+                    url: '',
+                    pic: '',
                 }
             }
         },
         beforeCreate(){
-            console.info("-----------生命周期:beforeCreate----------------");
+           // console.info("-----------生命周期:beforeCreate----------------");
         },
         created(){
-            console.info("-----------生命周期:cereted 实例已创建----------------");
+           // console.info("-----------生命周期:cereted 实例已创建----------------");
             //this.ajaxLyric();//获取歌词
 
         },
         mounted(){
             this.get();
             this.$emit("music", this.music);
-            console.info("---------------生命周期:mounted--------------------");
+           // console.info("---------------生命周期:mounted--------------------");
             this.audioEvent();
             this.ajaxLyric();//获取歌词
 
@@ -87,7 +85,7 @@
             this.ajaxLyric();//重新获取一次歌词
             this.currentTime = 0;
             this.get();
-            console.info("------------生命周期: activated----------");
+           // console.info("------------生命周期: activated----------");
 
         },
         methods: {
@@ -144,35 +142,43 @@
                 var id = this.$route.query.id;
                 var _this = this;
                 this.loading();
-                axios.get(apiurl.musicApi(id)).then(function (res) {
-                    this.list = res.data.songs[0];
-                    this.playTime = res.data.songs[0].mMusic.playTime;
+                var url="http://m.kugou.com/app/i/getSongInfo.php?cmd=playInfo&hash="+id+"&from=mkugou"
+                axios.get(bird+url).then(function (res) {
+                   // console.log(res.data.data);
+                   // _this.list = res.data;
+                 
+                   
+                    this.list=res.data
+                    _this.playTime = this.list.timeLength;
 
-                    this.music = {
-                        title: this.list.name,
-                        author: this.list.artists[0].name,
-                        url: this.list.mp3Url,
-                        pic: this.list.album.picUrl,
+                    _this.music = {
+                       title: _this.list.songName,
+                        author: _this.list.fileName,
+                        url: _this.list.url,
+                        pic:(_this.list.imgUrl).replace('{size}',400),
                     };
                     Indicator.close();
 
-                    this.$emit('title', this.music.title);
+                   this.$emit('title', this.music.title);
                 }.bind(this)).catch(function (error) {
                     console.log(error)
                 })
             },
             //请求歌词接口
             ajaxLyric: function () {
-                axios.get(apiurl.getLyric(this.$route.query.id))
+                 var id = this.$route.query.id;
+                 var url="http://www.kugou.com/yy/index.php?r=play/getdata&hash="+id;
+                axios.get(bird+url)
                     .then(function (res) {
-                        this.lyric.lyric = JSON.stringify(res.data.lrc.lyric);
-                        this.newLyric = this.parseLyric(res.data.lrc.lyric);
+                        this.lyric.lyric = JSON.stringify(res.data.data.lyrics);
+                        this.newLyric = this.parseLyric(res.data.data.lyrics);
                         this.scrollLyrics(); //歌词滚动
 
                     }.bind(this))
                     .catch(function (error) {
                         console.log(error);
                     })
+                
             },
             //接收歌词转化格式
             parseLyric: function (text) {
@@ -211,6 +217,7 @@
                 var audio = document.querySelector('#audio');
                 var uls = document.getElementById("lyriclist");
                 var lis = uls.getElementsByTagName("li");
+
                 var _this = this;
 
                 audio.addEventListener("timeupdate", function () {

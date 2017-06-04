@@ -6,7 +6,7 @@
                     leave-active-class="animated bounceOutRight"
             >
               <keep-alive>
-                <router-view @title="change" :title="title" v></router-view>
+                <router-view @title="change" :title="title"></router-view>
               </keep-alive>
             </transition>
 
