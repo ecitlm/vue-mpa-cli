@@ -14,6 +14,7 @@
 </style>
 <script>
     import axios from 'axios'
+    import api from '../api/api'
     import {Indicator} from 'mint-ui'
     export default{
         data(){
@@ -23,7 +24,7 @@
             }
         },
         created(){
-            this.getArticle();
+            //this.getArticle();
         },
         activated(){
             this.$emit('title', '文章详情');
@@ -33,18 +34,19 @@
                 text: '加载中...',
                 spinnerType: 'fading-circle'
             });
-            //alert(1)
         },
         mounted: function() {
             window.scrollTo(0, 0)
         },
         methods: {
             getArticle: function () {
-                var id = String(this.$route.query.id);
-                axios.get(apiurl.Article(id)).then(function (res) {
+                var data={
+                    postid:String(this.$route.query.id)
+                };
+                api.article(data)
+                .then(function (res) {
                     Indicator.close();
-                    console.log(res.data);
-                    (typeof res.data[id] == "object") ? this.article = res.data[id] : this.article = {"body": "该内容已删除"};
+                    (typeof res.data == "object") ? this.article = res.data : this.article = {"body": "该内容已删除"};
 
                 }.bind(this)).catch(function (error) {
                     console.log(error)

@@ -3,8 +3,8 @@
         <div class="container">
             <div class="waterfall">
 
-                <div class="waterlist list animated fadeInUp " v-for="(item ,index) in  list" @click="showImg(item.url)">
-                    <img  v-lazy.container="item.url">
+                <div class="waterlist list animated fadeInUp " v-for="(item ,index) in  list" @click="showImg('https://images.weserv.nl/?url='+item.img)+'&w=400'">
+                    <img  v-lazy.container='"https://images.weserv.nl/?url="+item.img+"&w=400"'>
                 </div>
 
             </div>
@@ -26,6 +26,7 @@
     import Vue from 'vue'
     import {Indicator} from 'mint-ui'
     import { Lazyload } from 'mint-ui';
+    import api from '../api/api'
     Vue.use(Lazyload);
     export default{
         data(){
@@ -52,8 +53,10 @@
             },
             getPhoto: function () {
                 this.loading();
-                axios.get(apiurl.ViewP(this.start, this.count)).then(function (res) {
-                    this.list = this.list.concat(res.data.results);
+                api.photo()
+                .then(function (res) {
+                    console.log(res)
+                    this.list = this.list.concat(res.data);
                     Indicator.close();
                 }.bind(this)).catch(function (error) {
                     console.log(error)

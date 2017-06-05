@@ -27,11 +27,12 @@
     import {Loadmore} from 'mint-ui';
     Vue.component(Loadmore.name, Loadmore);
     import {Indicator} from 'mint-ui'
+    import api from '../api/api'
     export default{
         data(){
             return {
                 msg: 'hello vue',
-                list: {},
+                list: [],
                 size: 10
             }
         },
@@ -45,8 +46,12 @@
         },
         methods: {
             get: function () {
-                axios.get(apiurl.jokeApi(this.size)).then(function (res) {
-                    this.list = res.data.段子;
+                var data={
+                    page:this.size
+                }
+                api.joke(data)
+                .then(function (res) {
+                    this.list = this.list.concat(res.data);
                     Indicator.close();
 
                 }.bind(this)).catch(function (error) {
@@ -54,7 +59,7 @@
                 })
             },
             loadBottom() {
-                // this.$refs.loadmore.onTopLoaded();
+                this.$refs.loadmore.onTopLoaded();
                 this.size += 5;
                 this.get();
             }

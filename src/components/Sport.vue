@@ -1,6 +1,6 @@
 <template>
     <div class="sport">
-            <li v-for="item in DONE_SPORT_LIST" @click=" pushUrl(item.postid)">
+            <li v-for="item in DONE_SPORT_LIST" @click=" pushUrl(item.postid)" :id="item.postid">
                 <img :src="item.imgsrc" :alt="item.title">
                 <p>{{item.title}}</p>
             </li>
@@ -30,6 +30,11 @@
                 this.$store.dispatch('FECTH_SPORT_LIST');
             },
             pushUrl:function (id) {
+             
+                if(!id){
+                     alert("该文章已被删除");
+                     return false;
+                }
                 this.$router.push({ path: '/article', query: { id: id }})
             }
         },

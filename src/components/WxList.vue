@@ -32,6 +32,7 @@
 </style>
 <script>
     import axios from 'axios'
+    import api from '../api/api'
     export default{
         data(){
             return {
@@ -47,6 +48,7 @@
             get: function () {
                 console.log("get");
                 axios.get(apiurl.WxUrl(this.ps))
+               // api.WxUrl(this.ps)
                     .then(function (response) {
                         console.log(response.data.result);
                         this.list = response.data.result;
