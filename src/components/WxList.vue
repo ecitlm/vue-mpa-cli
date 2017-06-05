@@ -46,16 +46,17 @@
         },
         methods: {
             get: function () {
+                var data={
+                    ps:this.ps
+                }
                 console.log("get");
-                axios.get(apiurl.WxUrl(this.ps))
-               // api.WxUrl(this.ps)
-                    .then(function (response) {
-                        console.log(response.data.result);
-                        this.list = response.data.result;
-                    }.bind(this))
-                    .catch(function (error) {
-                        console.log(error);
-                    });
+               api.WxUrl(data)
+               .then(function (res) {
+                   this.list = res.result;
+                }.bind(this))
+                .catch(function (error) {
+                    console.log(error);
+                });
             }
 
         },

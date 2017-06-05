@@ -43,11 +43,8 @@ export default {
  * @returns 
  */
   WxUrl(params) {
-    var data = {
-      jkAPikey: "d046cd1f569ed13d951f0258902ef9b2"
-    }
-    params = Object.assign(params, data);
-    return fetch.fetchGet('News/new_detail', params)
+  
+    return fetch.fetchGet('News/wx_select', params)
   },
 /**
  * 
