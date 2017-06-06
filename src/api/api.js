@@ -37,30 +37,65 @@ export default {
     return fetch.fetchGet('News/new_detail', params)
   },
 
-/**
- * 微信精选
- * @param {object} params {ps:pagesize分页}
- * @returns 
- */
+  /**
+   * 微信精选
+   * @param {object} params {ps:pagesize分页}
+   * @returns 
+   */
   WxUrl(params) {
-  
+
     return fetch.fetchGet('News/wx_select', params)
   },
-/**
- * 
- * 视频分类下列表
- * @param {object} params {page:分页数10 20 30 ,type:0,1,2}
- * @returns 
- */
-  video_type(params){
-     return fetch.fetchGet('Video/video_type', params)
+
+  /**
+   * 视频分类下列表
+   * @param {object} params {page:分页数10 20 30 ,type:0,1,2}
+   * @returns 
+   */
+  video_type(params) {
+    return fetch.fetchGet('Video/video_type', params)
   },
-/**
- * 花瓣图片
- * @param {any} params 
- * @returns 
- */
- photo(){
+
+  /**
+   * 花瓣图片
+   * @param {any} params 
+   * @returns 
+   */
+  photo() {
     return fetch.fetchGet('Picture/hua_ban');
- }
+  },
+
+  /**
+   * 热播电影列表
+   * @param {object} params 
+   * @returns 
+   */
+  playing_movie_list(params) {
+    return fetch.fetchGet('Movie/playing_movie_list', params);
+  },
+
+  /**
+   * 热播电影详细信息
+   * @param {object} params 
+   * @returns 
+   */
+  movie_info(params) {
+    return fetch.fetchGet('Movie/movie_info', params);
+  },
+
+  /**
+   * 知乎日报列表
+   * @returns 
+   */
+  zhihu_daily() {
+    return fetch.fetchGet('Zhihu/zhihu_daily');
+  },
+  /**
+   * 日报详情
+   * @param {object} params  {id:id}
+   * @returns 
+   */
+  zhihu_daily_info(params) {
+    return fetch.fetchGet('/Zhihu/news', params);
+  }
 }

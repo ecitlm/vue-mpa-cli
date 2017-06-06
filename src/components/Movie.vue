@@ -81,8 +81,8 @@
 
 </style>
 <script>
-    import axios from 'axios'
     import {Indicator} from 'mint-ui'
+    import api from '../api/api'
     export default{
         data(){
             return {
@@ -107,10 +107,14 @@
             },
             get: function () {
                 this.loading();
-                axios.get(apiurl.PlayingMovie(this.start, this.count))
+                var data={
+                    start:this.start,
+                    count:this.count
+                }
+                api.playing_movie_list(data)
                     .then(function (response) {
-                        this.list = response.data;
-                        this.subjects = this.subjects.concat(response.data.subjects);
+                        this.list = response;
+                        this.subjects = this.subjects.concat(response.subjects);
 
                         this.list.subjects = this.subjects;
                         Indicator.close();

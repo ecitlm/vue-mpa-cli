@@ -23,7 +23,6 @@
 </style>
 <script>
     import Vue from 'vue'
-    import axios from 'axios'
     import {Loadmore} from 'mint-ui';
     Vue.component(Loadmore.name, Loadmore);
     import {Indicator} from 'mint-ui'

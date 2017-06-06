@@ -22,7 +22,6 @@
 </template>
 
 <script>
-    import  axios from 'axios'
     import Vue from 'vue'
     import {Indicator} from 'mint-ui'
     import { Lazyload } from 'mint-ui';

@@ -2,7 +2,7 @@
  * @Author: ecitlm 
  * @Date: 2017-06-05 10:44:15 
  * @Last Modified by: ecitlm
- * @Last Modified time: 2017-06-05 20:25:02
+ * @Last Modified time: 2017-06-06 11:11:31
  */
 import axios from 'axios'
 import qs from 'qs'
@@ -73,29 +73,7 @@ const Proxy = "https://bird.ioliu.cn/v1/?url=";
 
 //定义api 接口
 global.apiurl = {
-
-
-    WxUrl: function (ps) {
-        const jkAPikey = "d046cd1f569ed13d951f0258902ef9b2"; //聚合Appkey
-        return (Proxy + "http://v.juhe.cn/weixin/query?key=" + jkAPikey + "&ps=" + ps);
-    },
-    PlayingMovie: function (start, count) {
-        return (Proxy + "http://api.douban.com/v2/movie/in_theaters?start=" + start + "&count=" + count);
-    },
-    MovieDetail: function (id) {
-        return (Proxy + "http://api.douban.com/v2/movie/subject/" + id);
-
-    },
-
     zhihu: function () {
         var zh = Proxy + "https://zhuanlan.zhihu.com/api/columns/wxyyxc1992";
-    },
-    zhihuDaily: function (day) {
-        var zh = Proxy + "http://news.at.zhihu.com/api/4/news/before/" + day;
-        return zh;
-    },
-    zhihuDetail: function (id) {
-        var zh = Proxy + "http://news-at.zhihu.com/api/4/news/" + id;
-        return zh;
     }
 }

@@ -49,7 +49,6 @@
                 var data={
                     ps:this.ps
                 }
-                console.log("get");
                api.WxUrl(data)
                .then(function (res) {
                    this.list = res.result;

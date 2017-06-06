@@ -40,8 +40,8 @@
 </template>
 
 <script>
-  import axios from 'axios'
   import {Indicator} from 'mint-ui'
+   import api from '../api/api'
   export default{
     data(){
       return {
@@ -69,7 +69,7 @@
       }
     },
     created(){
-      this.get();
+      //this.get();
       this.$emit('title', this.list.title);
     },
     activated(){
@@ -85,9 +85,13 @@
       },
       get: function () {
         this.loading();
-        axios.get(apiurl.MovieDetail(this.$route.query.id))
+        var data={
+          id:this.$route.query.id
+        }
+        api.movie_info(data)
           .then(function (res) {
             this.list=res.data
+            console.log(res.data);
             this.styleObject.width=res.data.rating.average*10+"%";
             this.$emit('title', this.list.title);
 
