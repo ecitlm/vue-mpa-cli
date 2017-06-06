@@ -2,13 +2,13 @@
  * @Author: ecitlm 
  * @Date: 2017-06-05 10:44:15 
  * @Last Modified by: ecitlm
- * @Last Modified time: 2017-06-06 11:11:31
+ * @Last Modified time: 2017-06-06 11:31:41
  */
 import axios from 'axios'
 import qs from 'qs'
 // axios 配置
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'https://api.it919.cn/public/index.php/api';
+axios.defaults.baseURL = 'https://api.it919.cn/public/api';
 
 //POST传参序列化
 axios.interceptors.request.use((config) => {
