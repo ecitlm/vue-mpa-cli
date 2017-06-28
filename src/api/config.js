@@ -2,7 +2,7 @@
  * @Author: ecitlm 
  * @Date: 2017-06-05 10:44:15 
  * @Last Modified by: ecitlm
- * @Last Modified time: 2017-06-06 11:31:41
+ * @Last Modified time: 2017-06-22 14:09:58
  */
 import axios from 'axios'
 import qs from 'qs'
@@ -31,7 +31,7 @@ axios.interceptors.request.use((config) => {
 
 export default {
     //fetchPost  请求方式
-    fetchPost: function (url, params) {
+    fetchPost: function(url, params) {
         return new Promise((resolve, reject) => {
             axios.post(url, params)
                 .then(response => {
@@ -47,11 +47,12 @@ export default {
 
 
     //GET 请求方式
-    fetchGet: function (url, params) {
+    fetchGet: function(url, params) {
+        console.log(params)
         return new Promise((resolve, reject) => {
             axios.get(url, {
-                params: params
-            })
+                    params: params
+                })
                 .then(response => {
                     resolve(response.data);
                 }, err => {
@@ -73,7 +74,7 @@ const Proxy = "https://bird.ioliu.cn/v1/?url=";
 
 //定义api 接口
 global.apiurl = {
-    zhihu: function () {
+    zhihu: function() {
         var zh = Proxy + "https://zhuanlan.zhihu.com/api/columns/wxyyxc1992";
     }
 }
