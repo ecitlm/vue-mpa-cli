@@ -31,7 +31,7 @@ npm run dev
 >这里封装了两个网络请求方法  fetchPost，fetchGet以及请求配置，通过
 
 config,js
-```
+```javascript
 import axios from 'axios'
 import qs from 'qs'
 // axios 配置
@@ -97,7 +97,7 @@ export default {
 ```
 >api.js 为所有接口封装,如下面的相关接口
 
-```
+```javascript
 import fetch from './config'
 export default {
     /**
@@ -121,7 +121,7 @@ export default {
 
 > 使用请求接口数据
 
-```
+```javascript
  // 获取首页新闻列表
     [types.FECTH_INDEX_NEWS]({commit}) {
         var data={
