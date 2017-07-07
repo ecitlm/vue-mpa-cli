@@ -16,6 +16,7 @@ mint-UI
 
 
 ### Build Setup 安装部署运行
+-----------------------------------------------------
 ```
 #clone
 git clone https://github.com/ecitlm/Vue_news.git
