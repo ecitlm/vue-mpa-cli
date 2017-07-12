@@ -3,10 +3,11 @@
 小Demo还在不断改进中，也敦促自己不断学习前进
 
 > 使用技术:
-Vue2.0
-axios+promise 网络请求封装
-VueRouter
-mint-UI
+* Vue2.0
+* axios+promise 网络请求封装
+* VueRouter
+* mint-UI
+* 接口请求[TP5_splider项目](https://github.com/ecitlm/TP5_Splider) 
 
 
 浏览地址：
