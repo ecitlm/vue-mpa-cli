@@ -7,7 +7,7 @@
 * axios+promise 网络请求封装
 * VueRouter
 * mint-UI
-* 接口请求[TP5_splider项目](https://github.com/ecitlm/TP5_Splider) 
+* API接口数据：[TP5_splider项目](https://github.com/ecitlm/TP5_Splider) 
 
 
 浏览地址：
