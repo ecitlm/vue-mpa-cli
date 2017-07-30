@@ -38,7 +38,7 @@ import axios from 'axios'
 import qs from 'qs'
 // axios 配置
 axios.defaults.timeout = 5000;
-axios.defaults.baseURL = 'https://api.it919.cn/public/api';
+axios.defaults.baseURL = 'https://api.xxx.ccom/api';
 
 //POST传参序列化
 axios.interceptors.request.use((config) => {
