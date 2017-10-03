@@ -27,10 +27,13 @@ npm install
 # serve with hot reload at localhost:800
 npm run dev
 
+###
+npm run build
+
 ```
 
 ### 网络请求封装
->这里封装了两个网络请求方法  fetchPost，fetchGet以及请求配置，通过
+>这里封装了两个网络请求方法  fetchPost，fetchGet以及请求配置，通过请求
 
 config,js
 ```javascript
