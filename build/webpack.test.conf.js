@@ -131,6 +131,8 @@ for (let pathname in entry) {
   let conf = {
     filename: `${filename}.html`,
     template: entry[pathname],
+    versionTime: new Date(),
+    versionType: 'test',
     inject: true,
     minify: {
       removeComments: true,

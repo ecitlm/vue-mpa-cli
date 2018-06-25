@@ -32,7 +32,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       rewrites: [{
         from: /.*/,
         to: path.posix.join(config.dev.assetsPublicPath, 'index.html')
-      }, ],
+      } ]
     },
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
@@ -48,7 +48,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
-      poll: config.dev.poll,
+      poll: config.dev.poll
     }
   },
   plugins: [
@@ -81,45 +81,45 @@ module.exports = new Promise((resolve, reject) => {
       // Add FriendlyErrorsPlugin
       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
         compilationSuccessInfo: {
-          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`],
+          messages: [`Your application is running here: http://${devWebpackConfig.devServer.host}:${port}`]
         },
-        onErrors: config.dev.notifyOnErrors ?
-          utils.createNotifierCallback() : undefined
+        onErrors: config.dev.notifyOnErrors
+          ? utils.createNotifierCallback() : undefined
       }))
 
       for (let pathname in entry) {
-        let filename = pathname.replace(/module\//, ''),
-          conf = {
-            filename: `${filename}.html`,
-            template: entry[pathname],
-            inject: true,
-            minify: {
-              removeComments: true,
-              collapseWhitespace: true,
-              removeAttributeQuotes: true
-              // more options:
-              // https://github.com/kangax/html-minifier#options-quick-reference
-            },
-            // necessary to consistently work with multiple chunks via CommonsChunkPlugin
-            chunksSortMode: 'dependency'
-          }
-        if (pathname in devWebpackConfig.entry) {
-          conf.chunks = ['manifest', 'vendor', pathname];
-          conf.hash = true;
+        let filename = pathname.replace(/module\//, '')
+        let conf = {
+          filename: `${filename}.html`,
+          template: entry[pathname],
+          inject: true,
+          minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeAttributeQuotes: true
+            // more options:
+            // https://github.com/kangax/html-minifier#options-quick-reference
+          },
+          // necessary to consistently work with multiple chunks via CommonsChunkPlugin
+          chunksSortMode: 'dependency'
         }
-        devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf));
+        if (pathname in devWebpackConfig.entry) {
+          conf.chunks = ['manifest', 'vendor', pathname]
+          conf.hash = true
+        }
+        devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
       }
       resolve(devWebpackConfig)
     }
   })
 })
 
-function getEntries(path) {
-  let entries = {};
+function getEntries (path) {
+  let entries = {}
   glob.sync(path).forEach(entry => {
     if (/(\module\/(?:.+[^.html]))/.test(entry)) {
-      entries[RegExp.$1.slice(0,RegExp.$1.lastIndexOf('/'))] = entry;
+      entries[RegExp.$1.slice(0, RegExp.$1.lastIndexOf('/'))] = entry
     }
   })
-  return entries;
+  return entries
 }

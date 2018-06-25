@@ -3,7 +3,7 @@
     <a href="./other.html">other</a>
     <a href="./news.html">news</a>
     <img src="./../../assets/logo.png">
-    <HelloWorld/>
+    <Index/>
   </div>
 </template>
 
