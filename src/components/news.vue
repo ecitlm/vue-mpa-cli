@@ -1,3 +1,3 @@
 <template>
-  <p>this is other news</p>
+  <h1>this is  news page</h1>
 </template>

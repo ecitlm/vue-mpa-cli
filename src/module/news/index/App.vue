@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-    <other/>
+    <h1>
+      <a href="/news/news_list.html">news</a>
+    </h1>
+    <news/>
   </div>
 </template>
 
 <script>
-import other from './../../components/other'
-
+import news from '../../../components/news.vue'
 export default {
   name: 'App',
   components: {
-    other
+    news
   }
 }
 </script>

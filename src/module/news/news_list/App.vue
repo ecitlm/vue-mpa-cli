@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <img src="./../../assets/logo.png">
+    <h1>this is news_list page</h1>
     <news/>
   </div>
 </template>
 
 <script>
-import news from './../../components/news'
-
 export default {
   name: 'App',
   components: {
-    news
   }
 }
 </script>
