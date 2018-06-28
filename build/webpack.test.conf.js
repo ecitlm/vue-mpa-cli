@@ -129,7 +129,9 @@ if (config.build.bundleAnalyzerReport) {
 for (let pathname in entry) {
   let filename = pathname.replace(/module\//, '')
   let conf = {
-    filename: `${filename}.html`,
+    filename: filename === 'index'
+      ? `${filename}.html`
+      : `${filename}/index.html`, // `${filename}/index.html`,,
     template: entry[pathname],
     versionTime: new Date(),
     versionType: 'test',

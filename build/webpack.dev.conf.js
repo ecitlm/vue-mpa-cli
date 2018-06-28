@@ -90,7 +90,9 @@ module.exports = new Promise((resolve, reject) => {
       for (let pathname in entry) {
         let filename = pathname.replace(/module\//, '')
         let conf = {
-          filename: `${filename}.html`,
+          filename: filename === 'index'
+            ? `${filename}.html`
+            : `${filename}/index.html`, // `${filename}/index.html`,
           template: entry[pathname],
           inject: true,
           minify: {
