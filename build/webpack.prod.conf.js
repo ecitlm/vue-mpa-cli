@@ -126,8 +126,15 @@ if (config.build.bundleAnalyzerReport) {
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
 
+// filename: filename === 'index'
+//       ? `${filename}.html`
+//       : `${filename}/index.html`,
+
 for (let pathname in entry) {
   let filename = pathname.replace(/module\//, '')
+  console.log('==================================================')
+  console.log(entry[pathname])
+  console.log(filename)
   let conf = {
     filename: `${filename}.html`,
     template: entry[pathname],
