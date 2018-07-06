@@ -3,7 +3,7 @@
 基于vue-cli 2.9.3 版本`vue init webpack`命令生成的的应用，在此基础上进行改造成多页应用脚手架.在写多页的基础上完全与写Vue单页应用一样。
 
 ### 页面创建
-在 `src/module`文件夹目录可以创建页面
+在 `src/views`文件夹目录可以创建页面
 如`index`文件夹,一个页面包括以下三个文件
 ```
 app.html
@@ -32,11 +32,11 @@ node server
 ```
 ### 改造了哪些东西
 对Vue的webpack进行了改造
-```
+```javascript
 function getEntries (path) {
   let entries = {}
   glob.sync(path).forEach(entry => {
-    if (/(module\/(?:.+[^.html]))/.test(entry)) {
+    if (/(views\/(?:.+[^.html]))/.test(entry)) {
       entries[RegExp.$1.slice(0, RegExp.$1.lastIndexOf('/'))] = entry
     }
   })
@@ -44,9 +44,9 @@ function getEntries (path) {
 }
 ```
 
-```
+```javascript
  for (let pathname in entry) {
-        let filename = pathname.replace(/module\//, '')
+        let filename = pathname.replace(/views\//, '')
         let conf = {
           filename: filename === 'index'
             ? `${filename}.html`

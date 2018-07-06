@@ -4,8 +4,7 @@ const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
 const glob = require('glob')
-const entry = getEntries('./src/module/**/*.js') // 获得入口js文件
-
+const entry = getEntries('./src/views/**/*.js') // 获得入口js文件
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
@@ -13,7 +12,7 @@ function resolve (dir) {
 function getEntries (path) {
   let entries = {}
   glob.sync(path).forEach(entry => {
-    if (/(module\/(?:.+[^.js]))/.test(entry)) {
+    if (/(views\/(?:.+[^.js]))/.test(entry)) {
       entries[RegExp.$1.slice(0, RegExp.$1.lastIndexOf('/'))] = entry
     }
   })

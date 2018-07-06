@@ -10,8 +10,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const glob = require('glob')
-const entry = getEntries('./src/module/**/*.html') // 获得入口hmtl文件
-
+const entry = getEntries('./src/views/**/*.html') // 获得入口hmtl文件
+// views module
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
 
@@ -88,7 +88,7 @@ module.exports = new Promise((resolve, reject) => {
       }))
 
       for (let pathname in entry) {
-        let filename = pathname.replace(/module\//, '')
+        let filename = pathname.replace(/views\//, '')
         let conf = {
           filename: filename === 'index'
             ? `${filename}.html`
@@ -119,7 +119,7 @@ module.exports = new Promise((resolve, reject) => {
 function getEntries (path) {
   let entries = {}
   glob.sync(path).forEach(entry => {
-    if (/(module\/(?:.+[^.html]))/.test(entry)) {
+    if (/(views\/(?:.+[^.html]))/.test(entry)) {
       entries[RegExp.$1.slice(0, RegExp.$1.lastIndexOf('/'))] = entry
     }
   })
