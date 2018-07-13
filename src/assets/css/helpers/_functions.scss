@@ -1,0 +1,13 @@
+//将px转换成rem
+$defaut-font-size: 64px;
+@function px2rem($px) {
+  @return round($px / $defaut-font-size * 100) / 100 * 1rem;
+}
+
+@function px2rem750($px) {
+  @return round($px / 75px * 100) / 100 * 1rem;
+}
+
+@function px2rem375($px) {
+  @return round($px * 2 / 75px * 100) / 100 * 1rem;
+}

@@ -21,13 +21,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+ @import "../../assets/css/tools";
 #app {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
   a{
-    color: #42b983;
-    font-size: 20px;
+    color: $color-blue;
+    font-size: 24px;
+    text-decoration: underline;
   }
 }
 </style>
