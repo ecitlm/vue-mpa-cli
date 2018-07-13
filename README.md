@@ -1,6 +1,6 @@
 # vue-cli 多页面应用
 
-基于vue-cli 2.9.3 版本`vue init webpack`命令生成的的应用，在此基础上进行改造成多页应用脚手架.在写多页的基础上完全与写Vue单页应用一样。
+基于vue-cli 2.9.3 版本`vue init webpack`命令生成的的应用，在此基础上进行改造成多页应用脚手架.在写多页的基础上完全与写Vue单页应用一样,并且兼容单页模块`vue-router`
 
 ### 页面创建
 在 `src/views`文件夹目录可以创建页面
@@ -30,7 +30,7 @@ node server
 
 
 ```
-### 改造了哪些东西
+### webpack 打包改造
 对Vue的webpack进行了改造
 ```javascript
 function getEntries (path) {
@@ -50,17 +50,14 @@ function getEntries (path) {
         let conf = {
           filename: filename === 'index'
             ? `${filename}.html`
-            : `${filename}/index.html`, // `${filename}/index.html`,
+            : `${filename}/index.html`,
           template: entry[pathname],
           inject: true,
           minify: {
             removeComments: true,
             collapseWhitespace: true,
             removeAttributeQuotes: true
-            // more options:
-            // https://github.com/kangax/html-minifier#options-quick-reference
           },
-          // necessary to consistently work with multiple chunks via CommonsChunkPlugin
           chunksSortMode: 'dependency'
         }
         if (pathname in devWebpackConfig.entry) {
@@ -69,4 +66,64 @@ function getEntries (path) {
         }
         devWebpackConfig.plugins.push(new HtmlWebpackPlugin(conf))
   }
+```
+
+### http网络请求封装
+`http.js`
+```javascript
+import axios from 'axios'
+let instance = axios.create({
+  baseURL: process.env.BACK_BASE_URL,
+  timeout: 60 * 1000
+})
+console.log(instance)
+// request拦截
+instance.interceptors.request.use(config => {
+  config.headers.authorization = `token` // 头部设置token信息 可以拿vuex中数据
+  return config
+}, error => {
+console.log('请求出错了...', error)
+  return Promise.reject(error)
+})
+
+instance.interceptors.response.use(response => {
+  if (response.data.code === 200) {
+//    return response.data
+  } else {
+    console.log(response)
+    let err = new Error()
+    err.response = response
+    return Promise.reject(err)
+  }
+}, error => {
+  return Promise.reject(error)
+})
+
+const httpRequest = (url, data = {}) => {
+  return new Promise((resolve, reject) => {
+    instance.post(url, data)
+      .then(res => {
+        resolve(res)
+      })
+      .catch(error => {
+        if (error.response) {
+          if (error.response.status === 200) {
+            reject(error.response.data)
+          }
+        } else if (error.request) {
+          if (error.code === 'ECONNABORTED') {
+            // Toast({
+            //   message: '请求超时，请刷新重试',
+            //   className: 'error-net',
+            //   duration: 3000
+            // })
+          } else {
+            console.log('网络断开,请检查网络')
+          }
+        } else {
+          console.log('请求无响应')
+        }
+      })
+  })
+}
 ```
