@@ -4,9 +4,8 @@
 
 ### 页面创建
 在 `src/views`文件夹目录可以创建页面
-如`index`文件夹,一个页面包括以下三个文件
+如`index`文件夹,一个页面包括以下2个文件 (index.html) 文件为根目录公用的 模板文件、根据根目录下的`title.js`配置生成 `title`标题
 ```
-app.html
 app.js
 App.vue
 ```

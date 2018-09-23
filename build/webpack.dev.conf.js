@@ -10,11 +10,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
 const glob = require('glob')
-const entry = getEntries('./src/views/**/*.html') // 获得入口hmtl文件
+const entry = getEntries('./src/views/**/App.vue') // 获得入口hmtl文件
 // views module
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
-
+const title = require('../title')
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -89,11 +89,13 @@ module.exports = new Promise((resolve, reject) => {
 
       for (let pathname in entry) {
         let filename = pathname.replace(/views\//, '')
+        console.log(filename)
         let conf = {
           filename: filename === 'index'
             ? `${filename}.html`
             : `${filename}/index.html`, // `${filename}/index.html`,
-          template: entry[pathname],
+          template: 'index.html',
+          title: title[filename],
           inject: true,
           minify: {
             removeComments: true,
@@ -119,7 +121,7 @@ module.exports = new Promise((resolve, reject) => {
 function getEntries (path) {
   let entries = {}
   glob.sync(path).forEach(entry => {
-    if (/(views\/(?:.+[^.html]))/.test(entry)) {
+    if (/(views\/(?:.+[^.vue]))/.test(entry)) {
       entries[RegExp.$1.slice(0, RegExp.$1.lastIndexOf('/'))] = entry
     }
   })

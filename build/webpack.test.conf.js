@@ -11,10 +11,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const glob = require('glob')
-const entry = getEntries('./src/views/**/*.html') // 获得入口hmtl文件
-
+const entry = getEntries('./src/views/**/App.vue') // 获得入口hmtl文件
 const env = require('../config/test.env')
-
+const title = require('../title')
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({
@@ -132,8 +131,8 @@ for (let pathname in entry) {
     filename: filename === 'index'
       ? `${filename}.html`
       : `${filename}/index.html`, // `${filename}/index.html`,,
-    template: entry[pathname],
-    versionTime: new Date(),
+    template: 'index.html',
+    title: title[filename],
     versionType: 'test',
     inject: true,
     minify: {
@@ -158,7 +157,7 @@ module.exports = webpackConfig
 function getEntries (path) {
   let entries = {}
   glob.sync(path).forEach(entry => {
-    if (/(views\/(?:.+[^.html]))/.test(entry)) {
+    if (/(views\/(?:.+[^.vue]))/.test(entry)) {
       entries[RegExp.$1.slice(0, RegExp.$1.lastIndexOf('/'))] = entry
     }
   })
