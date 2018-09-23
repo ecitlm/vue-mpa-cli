@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <h1>this is news_list page</h1>
-    <news/>
   </div>
 </template>
 
