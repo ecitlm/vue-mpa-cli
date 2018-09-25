@@ -3,13 +3,72 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
   <meta http-equiv="Time" content="<%= new Date() %>">
   <meta http-equiv="Version-Type" content="<%= htmlWebpackPlugin.options.versionType %>">
-  <title><%= htmlWebpackPlugin.options.title%></title>
+  <title>
+    <%= htmlWebpackPlugin.options.title%>
+  </title>
 </head>
 
 <body>
+  <script>
+    (function (designWidth, maxWidth) {
+      var doc = document
+      var win = window
+      var docEl = doc.documentElement
+      var tid
+      var rootItem, rootStyle
+      function refreshRem () {
+        var width = docEl.getBoundingClientRect().width
+        var dpr = window.devicePixelRatio || 1
+        docEl.setAttribute('data-dpr', dpr)
+        if (!maxWidth) {
+          maxWidth = 750
+        };
+        if (width > maxWidth) {
+          width = maxWidth
+        }
+        var rem = width * 75 / designWidth
+        // 兼容UC开始
+        rootStyle = 'html{font-size:' + rem + 'px !important}'
+        rootItem = document.getElementById('rootsize') || document.createElement('style')
+        if (!document.getElementById('rootsize')) {
+          document.getElementsByTagName('head')[0].appendChild(rootItem)
+          rootItem.id = 'rootsize'
+        }
+        if (rootItem.styleSheet) {
+          rootItem.styleSheet.disabled || (rootItem.styleSheet.cssText = rootStyle)
+        } else {
+          try {
+            rootItem.innerHTML = rootStyle
+          } catch (f) {
+            rootItem.innerText = rootStyle
+          }
+        }
+        // 兼容UC结束
+        docEl.style.fontSize = rem + 'px'
+      };
+      refreshRem()
+      win.addEventListener('resize', function () {
+        clearTimeout(tid) // 防止执行两次
+        tid = setTimeout(refreshRem, 300)
+      }, false)
+      win.addEventListener('pageshow', function (e) {
+        if (e.persisted) { // 浏览器后退的时候重新计算
+          clearTimeout(tid)
+          tid = setTimeout(refreshRem, 300)
+        }
+      }, false)
+      if (doc.readyState === 'complete') {
+        doc.body.style.fontSize = '16px'
+      } else {
+        doc.addEventListener('DOMContentLoaded', function (e) {
+          doc.body.style.fontSize = '16px'
+        }, false)
+      }
+    })(750, 768)
+  </script>
   <div id="app"></div>
   <!-- built files will be auto injected -->
 </body>

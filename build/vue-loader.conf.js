@@ -9,8 +9,15 @@ const sourceMapEnabled = isProduction
 module.exports = {
   loaders: utils.cssLoaders({
     sourceMap: sourceMapEnabled,
-    extract: isProduction
+    extract: isProduction,
+    usePostCSS: true
   }),
+  postcss: [
+    // postcss配置
+    require('postcss-px2rem')({
+      remUnit: 75
+    })
+  ],
   cssSourceMap: sourceMapEnabled,
   cacheBusting: config.dev.cacheBusting,
   transformToRequire: {
