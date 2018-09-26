@@ -3,12 +3,25 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
   <meta http-equiv="Time" content="<%= new Date() %>">
   <meta http-equiv="Version-Type" content="<%= htmlWebpackPlugin.options.versionType %>">
-  <title>
-    <%= htmlWebpackPlugin.options.title%>
-  </title>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+  <style>
+    @media screen and (min-width: 1200px) {
+      body,html {
+        font-size: 50px !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -19,6 +32,7 @@
       var docEl = doc.documentElement
       var tid
       var rootItem, rootStyle
+
       function refreshRem () {
         var width = docEl.getBoundingClientRect().width
         var dpr = window.devicePixelRatio || 1
